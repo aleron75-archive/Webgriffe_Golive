@@ -66,5 +66,7 @@ class Webgriffe_Golive_Model_Core
         if ($instance === false) {
             Mage::throwException(sprintf("Checker class does not exist for '%s'", $nodeName));
         }
+
+        return $instance;
     }
 }
