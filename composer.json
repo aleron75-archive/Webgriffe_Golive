@@ -1,0 +1,15 @@
+{
+    "name": "aleron75/webgriffe_golive",
+    "description": "Magento module which adds a command line tool to check whether current installation is ready to go live.",
+    "type": "magento-module",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "name": "Alessandro Ronchi",
+            "email": "aleron75@gmail.com"
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
