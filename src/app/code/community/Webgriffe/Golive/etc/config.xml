@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Webgriffe_Golive>
+            <version>0.1.0</version>
+        </Webgriffe_Golive>
+    </modules>
+    <global>
+        <models>
+            <webgriffe_golive>
+                <class>Webgriffe_Golive_Model</class>
+            </webgriffe_golive>
+        </models>
+    </global>
+    <default>
+        <webgriffe_golive>
+            <checkers>
+                <config_general_web_unsecure_base_url>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Unsecure Base URL]]></name>
+                    <description><![CDATA[]]></description>
+                    <severity>error</severity>
+                    <class>webgriffe_golive/checker_config_unsecureBaseUrl</class>
+                </config_general_web_unsecure_base_url>
+                <config_general_web_secure_base_url>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Unsecure Base URL]]></name>
+                    <description><![CDATA[]]></description>
+                    <severity>error</severity>
+                    <class>webgriffe_golive/checker_config_secureBaseUrl</class>
+                </config_general_web_secure_base_url>
+            </checkers>
+        </webgriffe_golive>
+    </default>
+</config>
