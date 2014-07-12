@@ -12,8 +12,9 @@ abstract class Webgriffe_Golive_Model_Checker_Abstract extends Varien_Object
      * @param $description string
      * @param $severity string
      */
-    public function initialize($name, $description, $severity)
+    public function initialize($code, $name, $description, $severity)
     {
+        $this->setCode($code);
         $this->setName($name);
         $this->setDescription($description);
         $this->setSeverity($severity);

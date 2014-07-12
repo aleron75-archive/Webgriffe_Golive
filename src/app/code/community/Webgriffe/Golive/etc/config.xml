@@ -24,7 +24,7 @@
                 </config_general_web_unsecure_base_url>
                 <config_general_web_secure_base_url>
                     <disabled>0</disabled>
-                    <name><![CDATA[Unsecure Base URL]]></name>
+                    <name><![CDATA[Secure Base URL]]></name>
                     <description><![CDATA[]]></description>
                     <severity>error</severity>
                     <class>webgriffe_golive/checker_config_secureBaseUrl</class>

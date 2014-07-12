@@ -23,6 +23,7 @@ class Webgriffe_Golive_Model_Core
             /** @var Webgriffe_Golive_Model_Checker_Abstract $checker */
             $checker = $this->_getCheckerInstance($checkerNodeName, $checkerNodeContent);
             $checker->initialize(
+                $checkerNodeName,
                 $checkerNodeContent['name'],
                 $checkerNodeContent['description'],
                 $checkerNodeContent['severity']
@@ -40,8 +41,10 @@ class Webgriffe_Golive_Model_Core
         /** @var Webgriffe_Golive_Model_Checker_Abstract $checker */
         foreach ($this->_checkers as $checker)
         {
-            $result = $checker->check();
+            $result[$checker->getCode()] = $checker->check();
         }
+
+        print_r($result);
     }
 
     protected function _getCheckerInstance($nodeName, $nodeContent)
