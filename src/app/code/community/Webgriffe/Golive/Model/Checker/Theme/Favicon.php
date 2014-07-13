@@ -2,6 +2,8 @@
 class Webgriffe_Golive_Model_Checker_Theme_Favicon
     extends Webgriffe_Golive_Model_Checker_Abstract
 {
+    // To obtain this value, run the following command:
+    // $ md5sum <filename>
     const MD5SUM_DEFAULT_FAVICON = "88733ee53676a47fc354a61c32516e82";
 
     public function check($parameters = array())
