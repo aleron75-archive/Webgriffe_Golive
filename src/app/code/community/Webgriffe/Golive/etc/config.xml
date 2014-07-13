@@ -29,6 +29,13 @@
                     <severity>error</severity>
                     <class>webgriffe_golive/checker_config_secureBaseUrl</class>
                 </config_general_web_secure_base_url>
+                <theme_filesystem_favicon>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Favicon]]></name>
+                    <description><![CDATA[Theme Favicon on File System]]></description>
+                    <severity>warning</severity>
+                    <class>webgriffe_golive/checker_theme_favicon</class>
+                </theme_filesystem_favicon>
             </checkers>
         </webgriffe_golive>
     </default>
