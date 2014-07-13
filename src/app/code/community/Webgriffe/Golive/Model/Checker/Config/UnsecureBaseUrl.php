@@ -14,7 +14,7 @@ class Webgriffe_Golive_Model_Checker_Config_UnsecureBaseUrl
         $this->validateParameters($parameters);
 
         if (!isset($parameters['domain'])) {
-            return $this->getDefaultSeverity();
+            Mage::throwException(sprintf("Parameter 'domain' is missing."));
         }
 
         $configuredValue = Mage::getStoreConfig(
