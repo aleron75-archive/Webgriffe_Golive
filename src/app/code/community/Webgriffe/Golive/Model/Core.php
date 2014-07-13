@@ -55,8 +55,7 @@ class Webgriffe_Golive_Model_Core
                 $result[$checker->getCode()] = $checker->check($parameters);
             }
         }
-
-        print_r($result);
+        return $result;
     }
 
     protected function _getCheckerInstance($nodeName, $nodeContent)
