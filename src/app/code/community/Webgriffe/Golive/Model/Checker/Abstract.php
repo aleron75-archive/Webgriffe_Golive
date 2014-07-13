@@ -3,7 +3,7 @@ abstract class Webgriffe_Golive_Model_Checker_Abstract extends Varien_Object
 {
     const SEVERITY_ERROR    = 'error';
     const SEVERITY_WARNING  = 'warning';
-    const SEVERITY_INFO     = 'info';
+    const SEVERITY_NONE     = 'passed';
 
     /**
      * Initialize a Checker
@@ -17,9 +17,13 @@ abstract class Webgriffe_Golive_Model_Checker_Abstract extends Varien_Object
         $this->setCode($code);
         $this->setName($name);
         $this->setDescription($description);
-        $this->setSeverity($severity);
+        $this->setDefaultSeverity($severity);
         return $this;
     }
 
-    public abstract function check();
+    /**
+     * @param array $parameters
+     * @return string
+     */
+    public abstract function check($parameters = array());
 }

@@ -34,14 +34,26 @@ class Webgriffe_Golive_Model_Core
         Mage::dispatchEvent('webgriffe_golive_core_construct_after', array('checkers'=>$this->_checkers));
     }
 
-    public function check()
+    /**
+     * @param array $parameters Additional parameters
+     */
+    public function check($parameters = array())
     {
         $result = array();
 
-        /** @var Webgriffe_Golive_Model_Checker_Abstract $checker */
-        foreach ($this->_checkers as $checker)
+        /** @var array $stores */
+        $stores = Mage::app()->getStores();
+
+        /** @var Mage_Core_Model_Store $store */
+        foreach ($stores as $store)
         {
-            $result[$checker->getCode()] = $checker->check();
+            $parameters['store_id'] = $store->getId();
+
+            /** @var Webgriffe_Golive_Model_Checker_Abstract $checker */
+            foreach ($this->_checkers as $checker)
+            {
+                $result[$checker->getCode()] = $checker->check($parameters);
+            }
         }
 
         print_r($result);
