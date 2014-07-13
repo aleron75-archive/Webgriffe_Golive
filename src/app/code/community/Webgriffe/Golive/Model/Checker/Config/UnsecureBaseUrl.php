@@ -1,7 +1,9 @@
 <?php
 
-class Webgriffe_Golive_Model_Checker_Config_UnsecureBaseUrl extends Webgriffe_Golive_Model_Checker_Abstract
+class Webgriffe_Golive_Model_Checker_Config_UnsecureBaseUrl
+    extends Webgriffe_Golive_Model_Checker_Abstract
 {
+    const XML_CONFIG_PATH = 'web/unsecure/base_url';
 
     /**
      * @param array $parameters
@@ -9,24 +11,20 @@ class Webgriffe_Golive_Model_Checker_Config_UnsecureBaseUrl extends Webgriffe_Go
      */
     public function check($parameters = array())
     {
+        $this->validateParameters($parameters);
+
         if (!isset($parameters['domain'])) {
             return $this->getDefaultSeverity();
         }
 
-        if (!isset($parameters['store_id'])) {
-            $parameters['store_id'] = null;
-        }
-
-        $configuredUnsecureBaseUrl = Mage::getStoreConfig(
-            'web/unsecure/base_url',
+        $configuredValue = Mage::getStoreConfig(
+            self::XML_CONFIG_PATH,
             $parameters['store_id']
         );
 
         $domain = $parameters['domain'];
-        $valueToCheck = sprintf('http://%s/', $domain);
-
-        if ($configuredUnsecureBaseUrl != $valueToCheck)
-        {
+        $pattern = '|http[s]{0,1}://'.trim($domain).'/|';
+        if (preg_match($pattern, $configuredValue) == 0) {
             return $this->getDefaultSeverity();
         }
 

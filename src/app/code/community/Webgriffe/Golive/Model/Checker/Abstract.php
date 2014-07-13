@@ -21,9 +21,12 @@ abstract class Webgriffe_Golive_Model_Checker_Abstract extends Varien_Object
         return $this;
     }
 
-    /**
-     * @param array $parameters
-     * @return string
-     */
     public abstract function check($parameters = array());
+
+    public function validateParameters(&$parameters)
+    {
+        if (!isset($parameters['store_id'])) {
+            $parameters['store_id'] = null;
+        }
+    }
 }

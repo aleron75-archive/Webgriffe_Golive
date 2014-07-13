@@ -1,14 +1,7 @@
 <?php
 
-class Webgriffe_Golive_Model_Checker_Config_SecureBaseUrl extends Webgriffe_Golive_Model_Checker_Abstract
+class Webgriffe_Golive_Model_Checker_Config_SecureBaseUrl
+    extends Webgriffe_Golive_Model_Checker_Config_UnsecureBaseUrl
 {
-    /**
-     * @param array $parameters
-     * @return string
-     */
-    public function check($parameters = array())
-    {
-        // TODO Implement checks
-        return $this->getDefaultSeverity();
-    }
+    const XML_CONFIG_PATH = 'web/secure/base_url';
 }
