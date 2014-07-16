@@ -13,10 +13,6 @@ class Webgriffe_Golive_Model_Checker_Config_UnsecureBaseUrl
     {
         $this->validateParameters($parameters);
 
-        if (!isset($parameters['domain'])) {
-            Mage::throwException(sprintf("Parameter 'domain' is missing."));
-        }
-
         $configuredValue = Mage::getStoreConfig(
             self::XML_CONFIG_PATH,
             $parameters['store_id']
@@ -29,5 +25,14 @@ class Webgriffe_Golive_Model_Checker_Config_UnsecureBaseUrl
         }
 
         return self::SEVERITY_NONE;
+    }
+
+    public function validateParameters(&$parameters)
+    {
+        parent::validateParameters($parameters);
+
+        if (!isset($parameters['domain'])) {
+            Mage::throwException(sprintf("Parameter 'domain' is missing."));
+        }
     }
 }
