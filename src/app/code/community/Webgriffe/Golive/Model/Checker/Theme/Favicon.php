@@ -8,9 +8,7 @@ class Webgriffe_Golive_Model_Checker_Theme_Favicon
 
     public function check($parameters = array())
     {
-        $this->_logger->info("Called check() with following parameters: %s", print_r($parameters, 1));
         $this->validateParameters($parameters);
-        $this->_logger->info("Parameters after validation: %s", print_r($parameters, 1));
 
         $theme = $parameters['theme'];
 
@@ -31,6 +29,7 @@ class Webgriffe_Golive_Model_Checker_Theme_Favicon
      */
     public function validateParameters(&$parameters)
     {
+        $this->_logger->info("Parameters before validate(): %s", print_r($parameters, 1));
         parent::validateParameters($parameters);
 
         if (!isset($parameters['theme']))
@@ -47,6 +46,7 @@ class Webgriffe_Golive_Model_Checker_Theme_Favicon
 
             $parameters['theme'] = $package.DS.$theme;
         }
+        $this->_logger->info("Parameters after validate(): %s", print_r($parameters, 1));
     }
 
 }

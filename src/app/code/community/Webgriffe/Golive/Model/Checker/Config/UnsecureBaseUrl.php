@@ -29,10 +29,13 @@ class Webgriffe_Golive_Model_Checker_Config_UnsecureBaseUrl
 
     public function validateParameters(&$parameters)
     {
+        $this->_logger->info("Parameters before validate(): %s", print_r($parameters, 1));
         parent::validateParameters($parameters);
 
         if (!isset($parameters['domain'])) {
+            $this->_logger->error("Parameter 'domain' is missing.");
             Mage::throwException(sprintf("Parameter 'domain' is missing."));
         }
+        $this->_logger->info("Parameters after validate(): %s", print_r($parameters, 1));
     }
 }
