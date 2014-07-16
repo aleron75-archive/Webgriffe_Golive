@@ -29,23 +29,32 @@
                     <disabled>0</disabled>
                     <name><![CDATA[Unsecure Base URL]]></name>
                     <description><![CDATA[]]></description>
-                    <severity>error</severity>
+                    <default_severity>error</default_severity>
                     <class>webgriffe_golive/checker_config_unsecureBaseUrl</class>
                 </config_general_web_unsecure_base_url>
                 <config_general_web_secure_base_url>
                     <disabled>0</disabled>
                     <name><![CDATA[Secure Base URL]]></name>
                     <description><![CDATA[]]></description>
-                    <severity>error</severity>
+                    <default_severity>error</default_severity>
                     <class>webgriffe_golive/checker_config_secureBaseUrl</class>
                 </config_general_web_secure_base_url>
                 <theme_filesystem_favicon>
                     <disabled>0</disabled>
                     <name><![CDATA[Favicon]]></name>
                     <description><![CDATA[Theme Favicon on File System]]></description>
-                    <severity>warning</severity>
+                    <default_severity>warning</default_severity>
                     <class>webgriffe_golive/checker_theme_favicon</class>
                 </theme_filesystem_favicon>
+                <html_head_default_title>
+                    <disabled>0</disabled>
+                    <name><![CDATA[HTML Head Default Title]]></name>
+                    <description><![CDATA[System > Configuration > GENERAL > Design > HTML Head > Default Title]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[design/head/default_title]]></xml_config_path>
+                    <default_config_value><![CDATA[Magento Commerce]]></default_config_value>
+                </html_head_default_title>
             </checkers>
         </webgriffe_golive>
     </default>

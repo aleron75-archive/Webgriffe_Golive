@@ -17,16 +17,16 @@ abstract class Webgriffe_Golive_Model_Checker_Abstract extends Varien_Object
     /**
      * Initialize a Checker
      *
-     * @param $name string
-     * @param $description string
-     * @param $severity string
+     *
+    $checkerNodeContent['name'],
+    $checkerNodeContent['description'],
+    $checkerNodeContent['severity']
+     *
      */
-    public function initialize($code, $name, $description, $severity)
+    public function initialize($code, $data)
     {
         $this->setCode($code);
-        $this->setName($name);
-        $this->setDescription($description);
-        $this->setDefaultSeverity($severity);
+        $this->addData($data);
         return $this;
     }
 

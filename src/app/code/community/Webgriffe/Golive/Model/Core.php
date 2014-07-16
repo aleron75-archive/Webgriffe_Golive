@@ -22,12 +22,7 @@ class Webgriffe_Golive_Model_Core
 
             /** @var Webgriffe_Golive_Model_Checker_Abstract $checker */
             $checker = $this->_getCheckerInstance($checkerNodeName, $checkerNodeContent);
-            $checker->initialize(
-                $checkerNodeName,
-                $checkerNodeContent['name'],
-                $checkerNodeContent['description'],
-                $checkerNodeContent['severity']
-            );
+            $checker->initialize($checkerNodeName, $checkerNodeContent);
             $this->_checkers[$checkerNodeName] = $checker;
         }
         Varien_Profiler::stop('webgriffe_golive::core::construct');
@@ -68,7 +63,7 @@ class Webgriffe_Golive_Model_Core
             Mage::throwException(sprintf("Checker description not set for '%s'", $nodeName));
         }
 
-        if (!isset($nodeContent['severity'])) {
+        if (!isset($nodeContent['default_severity'])) {
             Mage::throwException(sprintf("Checker severity not set for '%s'", $nodeName));
         }
 
