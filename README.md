@@ -18,6 +18,24 @@ Checkers can be run through an easy-to-use shell script:
 $ php shell/golive.php --domain www.yourdomain.com
 ```
 
+At the moment the output is something ugly like:
+
+```
+Active Checkers found: 7
+Checking current Magento installation... done!
+
+Result
+array(7) {
+  ["config_general_web_unsecure_base_url"] => string(6) "passed"
+  ["config_general_web_secure_base_url"] => string(6) "passed"
+  ["theme_filesystem_favicon"] => string(7) "warning"
+  ["html_head_default_title"] => string(7) "warning"
+  ["html_head_default_description"] => string(7) "warning"
+  ["html_head_default_keywords"] => string(7) "warning"
+  ["html_head_default_robots"] => string(6) "passed"
+}
+```
+
 Checkers are declared and activated through the config.xml file.
 
 Some of them can be used to check different configuration values simply
