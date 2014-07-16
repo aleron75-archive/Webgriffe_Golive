@@ -12,7 +12,11 @@ has some default settings which should be updated before going live.
 For example it checks whether you have changed the HTML Head Default Title or
 Description or if you have updated the theme favicon.
 
-Checkers can be run through an easy-to-use shell script.
+Checkers can be run through an easy-to-use shell script:
+
+```
+$ php shell/golive.php --domain www.yourdomain.com
+```
 
 Checkers are declared and activated through the config.xml file.
 
