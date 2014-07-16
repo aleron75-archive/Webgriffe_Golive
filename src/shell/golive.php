@@ -25,6 +25,13 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
         printf("done!".PHP_EOL);
 
         Zend_Debug::dump($result, 'Result');
+
+        foreach ($result as $key => $val) {
+            if ($val == Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_ERROR) {
+                exit(1);
+            }
+        }
+        exit(0);
     }
 
     /**
