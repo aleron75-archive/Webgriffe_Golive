@@ -39,4 +39,6 @@ is raw and still has to be beautified and more Checkers have to be developed.
 
 In other words: any feedback or help is extremely appreciated.
 
+Extension developed and tested on [Magento CE v 1.8.1.0](http://www.magentocommerce.com/download)
+
 This extension is published under the [Open Software License (OSL 3.0)](http://opensource.org/licenses/OSL-3.0).
