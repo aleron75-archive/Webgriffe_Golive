@@ -5,6 +5,15 @@ abstract class Webgriffe_Golive_Model_Checker_Abstract extends Varien_Object
     const SEVERITY_WARNING  = 'warning';
     const SEVERITY_NONE     = 'passed';
 
+    /** @var  Webgriffe_Golive_Helper_Log */
+    protected $_logger;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->_logger = Mage::helper('webgriffe_golive/log');
+    }
+
     /**
      * Initialize a Checker
      *
