@@ -11,7 +11,18 @@ class Webgriffe_Golive_Model_Checker_Config_DefaultValue
             $parameters['store_id']
         );
 
-        if ($this->getDefaultConfigValue() == $configuredValue) {
+        switch ($this->getFaultOperand())
+        {
+            case 'neq':
+                $result = $this->getDefaultConfigValue() != $configuredValue;
+                break;
+            case 'eq':
+                // break intentionally omitted: 'eq' is default fault operand
+            default:
+                $result = $this->getDefaultConfigValue() == $configuredValue;
+        }
+
+        if ($result) {
             return $this->getDefaultSeverity();
         }
 
