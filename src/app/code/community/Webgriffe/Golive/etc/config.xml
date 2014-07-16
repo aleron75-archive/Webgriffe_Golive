@@ -64,6 +64,15 @@
                     <xml_config_path><![CDATA[design/head/default_description]]></xml_config_path>
                     <default_config_value><![CDATA[Default Description]]></default_config_value>
                 </html_head_default_description>
+                <html_head_default_keywords>
+                    <disabled>0</disabled>
+                    <name><![CDATA[HTML Head Default Keywords]]></name>
+                    <description><![CDATA[System > Configuration > GENERAL > Design > HTML Head > Default Keywords]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[design/head/default_keywords]]></xml_config_path>
+                    <default_config_value><![CDATA[Magento, Varien, E-commerce]]></default_config_value>
+                </html_head_default_keywords>
             </checkers>
         </webgriffe_golive>
     </default>
