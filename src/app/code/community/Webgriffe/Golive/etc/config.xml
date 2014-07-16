@@ -6,6 +6,11 @@
         </Webgriffe_Golive>
     </modules>
     <global>
+        <helpers>
+            <webgriffe_golive>
+                <class>Webgriffe_Golive_Helper</class>
+            </webgriffe_golive>
+        </helpers>
         <models>
             <webgriffe_golive>
                 <class>Webgriffe_Golive_Model</class>
@@ -13,6 +18,11 @@
         </models>
     </global>
     <default>
+        <dev>
+            <log>
+                <webgriffe_golive_active>1</webgriffe_golive_active>
+            </log>
+        </dev>
         <webgriffe_golive>
             <checkers>
                 <config_general_web_unsecure_base_url>
