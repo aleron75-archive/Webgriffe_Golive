@@ -18,7 +18,11 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
         );
 
         $golive = new Webgriffe_Golive_Model_Core();
+
+        printf("Active Checkers found: %d".PHP_EOL, $golive->getCheckersCount());
+        printf("Checking current Magento installation... ");
         $result = $golive->check($parameters);
+        printf("done!".PHP_EOL);
 
         Zend_Debug::dump($result, 'Result');
     }

@@ -78,4 +78,9 @@ class Webgriffe_Golive_Model_Core
 
         return $instance;
     }
+
+    public function getCheckersCount()
+    {
+        return count($this->_checkers);
+    }
 }
