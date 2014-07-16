@@ -26,7 +26,7 @@ abstract class Webgriffe_Golive_Model_Checker_Abstract extends Varien_Object
     public function initialize($code, $data)
     {
         $this->setCode($code);
-        $this->addData($data);
+        $this->addData(array_map("trim", $data));
         return $this;
     }
 
