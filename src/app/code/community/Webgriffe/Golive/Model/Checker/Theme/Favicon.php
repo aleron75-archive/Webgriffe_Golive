@@ -23,6 +23,12 @@ class Webgriffe_Golive_Model_Checker_Theme_Favicon
         return self::SEVERITY_NONE;
     }
 
+    /**
+     * If theme is not passed as parameter, it's taken from configuration.
+     * If not configured, fallback to <default package/default theme>.
+     *
+     * @param $parameters
+     */
     public function validateParameters(&$parameters)
     {
         parent::validateParameters($parameters);
@@ -31,12 +37,12 @@ class Webgriffe_Golive_Model_Checker_Theme_Favicon
         {
             $package = Mage::getStoreConfig('design/package/name', $parameters['store_id']);
             if (empty($package)) {
-                $package = 'default';
+                $package = Mage_Core_Model_Design_Package::DEFAULT_PACKAGE;
             }
 
             $theme = Mage::getStoreConfig('design/theme/default', $parameters['store_id']);
             if (empty($theme)) {
-                $theme = 'default';
+                $theme = Mage_Core_Model_Design_Package::DEFAULT_THEME;
             }
 
             $parameters['theme'] = $package.DS.$theme;
