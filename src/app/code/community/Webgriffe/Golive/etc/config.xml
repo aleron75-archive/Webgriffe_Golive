@@ -83,6 +83,15 @@
                     <default_config_value><![CDATA[INDEX,FOLLOW]]></default_config_value>
                     <fault_operand>neq</fault_operand>
                 </html_head_default_robots>
+                <html_head_demo_notice>
+                    <disabled>0</disabled>
+                    <name><![CDATA[HTML Head Demo Notice]]></name>
+                    <description><![CDATA[System > Configuration > GENERAL > Design > HTML Head > Display Demo Store Notice]]></description>
+                    <default_severity>error</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[design/head/demonotice]]></xml_config_path>
+                    <default_config_value><![CDATA[1]]></default_config_value>
+                </html_head_demo_notice>
             </checkers>
         </webgriffe_golive>
     </default>
