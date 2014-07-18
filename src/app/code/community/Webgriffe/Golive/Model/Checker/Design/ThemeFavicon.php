@@ -1,24 +1,13 @@
 <?php
 class Webgriffe_Golive_Model_Checker_Design_ThemeFavicon
-    extends Webgriffe_Golive_Model_Checker_Abstract
+    extends Webgriffe_Golive_Model_Checker_File_Md5sum
 {
-    // To obtain this value, run the following command:
-    // $ md5sum <filename>
-    const MD5SUM_DEFAULT_FAVICON = "88733ee53676a47fc354a61c32516e82";
-
     public function check($parameters = array())
     {
         $this->validateParameters($parameters);
-
         $theme = $parameters['theme'];
-
-        $filename = Mage::getBaseDir('skin').DS.'frontend'.DS.$theme.DS.'favicon.ico';
-        $currentFaviconMd5 = md5_file($filename);
-        if ($currentFaviconMd5 == self::MD5SUM_DEFAULT_FAVICON) {
-            return $this->getDefaultSeverity();
-        }
-
-        return self::SEVERITY_NONE;
+        $this->setFilepath(Mage::getBaseDir('skin').DS.'frontend'.DS.$theme.DS.'favicon.ico');
+        return parent::check($parameters);
     }
 
     /**
@@ -29,7 +18,6 @@ class Webgriffe_Golive_Model_Checker_Design_ThemeFavicon
      */
     public function validateParameters(&$parameters)
     {
-        $this->_logger->info("Parameters before validate(): %s", print_r($parameters, 1));
         parent::validateParameters($parameters);
 
         if (!isset($parameters['theme']))
@@ -46,7 +34,6 @@ class Webgriffe_Golive_Model_Checker_Design_ThemeFavicon
 
             $parameters['theme'] = $package.DS.$theme;
         }
-        $this->_logger->info("Parameters after validate(): %s", print_r($parameters, 1));
     }
 
 }

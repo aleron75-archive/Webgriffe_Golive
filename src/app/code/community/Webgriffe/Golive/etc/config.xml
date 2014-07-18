@@ -39,12 +39,33 @@
                     <default_severity>error</default_severity>
                     <class>webgriffe_golive/checker_config_secureBaseUrl</class>
                 </config_general_web_secure_base_url>
+                <design_root_favicon>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Root Favicon]]></name>
+                    <description><![CDATA[Root Favicon on File System]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_design_rootFavicon</class>
+                    <!--
+                        Value calculated on Magento v 1.8.1.0;
+                        it's recommended to update value on different version.
+                        To obtain the md5sum of a file, run the command:
+                        $ md5sum <filename>
+                     -->
+                    <md5sum><![CDATA[88733ee53676a47fc354a61c32516e82]]></md5sum>
+                </design_root_favicon>
                 <design_theme_favicon>
                     <disabled>0</disabled>
-                    <name><![CDATA[Favicon]]></name>
+                    <name><![CDATA[Theme Favicon]]></name>
                     <description><![CDATA[Theme Favicon on File System]]></description>
                     <default_severity>warning</default_severity>
                     <class>webgriffe_golive/checker_design_themeFavicon</class>
+                    <!--
+                        Value calculated on Magento v 1.8.1.0;
+                        it's recommended to update value on different version.
+                        To obtain the md5sum of a file, run the command:
+                        $ md5sum <filename>
+                     -->
+                    <md5sum><![CDATA[88733ee53676a47fc354a61c32516e82]]></md5sum>
                 </design_theme_favicon>
                 <html_head_default_title>
                     <disabled>0</disabled>
