@@ -24,14 +24,23 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
         $result = $golive->check($parameters);
         printf("done!".PHP_EOL);
 
-        Zend_Debug::dump($result, 'Result');
-
+        $severityCount = array(
+            Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_NONE => 0,
+            Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_WARNING => 0,
+            Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_ERROR => 0
+        );
         foreach ($result as $key => $val) {
-            if ($val == Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_ERROR) {
-                exit(1);
-            }
+            $severityCount[$val] ++;
         }
-        exit(0);
+
+        printf("Errors: %d".PHP_EOL, $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_ERROR]);
+        printf("Warnings: %d".PHP_EOL, $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_WARNING]);
+        printf("Passed: %d".PHP_EOL, $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_NONE]);
+
+
+        Zend_Debug::dump($result, 'Detailed result');
+
+        exit($severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_ERROR] > 0);
     }
 
     /**
