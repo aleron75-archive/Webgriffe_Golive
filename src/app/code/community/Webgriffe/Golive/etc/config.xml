@@ -191,6 +191,15 @@
                     <xml_config_path><![CDATA[general/store_information/name]]></xml_config_path>
                     <default_config_value><![CDATA[]]></default_config_value>
                 </store_info_name>
+                <store_info_phone>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Store Information Phone]]></name>
+                    <description><![CDATA[System > Configuration > GENERAL > General > Store Information > Store Contact Telephone]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[general/store_information/phone]]></xml_config_path>
+                    <default_config_value><![CDATA[]]></default_config_value>
+                </store_info_phone>
             </checkers>
         </webgriffe_golive>
     </default>
