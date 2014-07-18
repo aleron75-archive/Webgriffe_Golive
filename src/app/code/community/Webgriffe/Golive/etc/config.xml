@@ -173,6 +173,15 @@
                     <xml_config_path><![CDATA[general/store_information/merchant_country]]></xml_config_path>
                     <default_config_value><![CDATA[]]></default_config_value>
                 </store_info_country>
+                <store_info_vatnumber>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Store Information VAT Number]]></name>
+                    <description><![CDATA[System > Configuration > GENERAL > General > Store Information > VAT Number]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[general/store_information/merchant_vat_number]]></xml_config_path>
+                    <default_config_value><![CDATA[]]></default_config_value>
+                </store_info_vatnumber>
             </checkers>
         </webgriffe_golive>
     </default>
