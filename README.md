@@ -21,18 +21,31 @@ $ php shell/golive.php --domain www.yourdomain.com
 At the moment the output is something ugly like:
 
 ```
-Active Checkers found: 7
+Active Checkers found: 17
 Checking current Magento installation... done!
+Errors: 0
+Warnings: 13
+Passed: 4
 
-Result
-array(7) {
+Detailed result
+array(17) {
   ["config_general_web_unsecure_base_url"] => string(6) "passed"
   ["config_general_web_secure_base_url"] => string(6) "passed"
-  ["theme_filesystem_favicon"] => string(7) "warning"
+  ["design_root_favicon"] => string(7) "warning"
+  ["design_theme_favicon"] => string(7) "warning"
   ["html_head_default_title"] => string(7) "warning"
   ["html_head_default_description"] => string(7) "warning"
   ["html_head_default_keywords"] => string(7) "warning"
   ["html_head_default_robots"] => string(6) "passed"
+  ["html_head_demo_notice"] => string(6) "passed"
+  ["design_image_placeholder"] => string(7) "warning"
+  ["design_smallimage_placeholder"] => string(7) "warning"
+  ["design_thumbnail_placeholder"] => string(7) "warning"
+  ["store_info_address"] => string(7) "warning"
+  ["store_info_country"] => string(7) "warning"
+  ["store_info_vatnumber"] => string(7) "warning"
+  ["store_info_name"] => string(7) "warning"
+  ["store_info_phone"] => string(7) "warning"
 }
 ```
 
