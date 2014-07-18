@@ -37,10 +37,9 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
         printf("Warnings: %d".PHP_EOL, $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_WARNING]);
         printf("Passed: %d".PHP_EOL, $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_NONE]);
 
-
         Zend_Debug::dump($result, 'Detailed result');
 
-        exit($severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_ERROR] > 0);
+        exit($severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_ERROR]);
     }
 
     /**
