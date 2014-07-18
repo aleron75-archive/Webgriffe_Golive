@@ -155,6 +155,15 @@
                      -->
                     <md5sum><![CDATA[b2b682d28a08a748a73d2cda70ab5a57]]></md5sum>
                 </design_thumbnail_placeholder>
+                <store_info_address>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Store Information Contact Address]]></name>
+                    <description><![CDATA[System > Configuration > GENERAL > General > Store Information > Store Contact Address]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[general/store_information/address]]></xml_config_path>
+                    <default_config_value><![CDATA[]]></default_config_value>
+                </store_info_address>
             </checkers>
         </webgriffe_golive>
     </default>
