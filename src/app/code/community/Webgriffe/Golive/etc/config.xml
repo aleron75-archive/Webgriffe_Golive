@@ -39,13 +39,13 @@
                     <default_severity>error</default_severity>
                     <class>webgriffe_golive/checker_config_secureBaseUrl</class>
                 </config_general_web_secure_base_url>
-                <theme_filesystem_favicon>
+                <design_theme_favicon>
                     <disabled>0</disabled>
                     <name><![CDATA[Favicon]]></name>
                     <description><![CDATA[Theme Favicon on File System]]></description>
                     <default_severity>warning</default_severity>
-                    <class>webgriffe_golive/checker_theme_favicon</class>
-                </theme_filesystem_favicon>
+                    <class>webgriffe_golive/checker_design_themeFavicon</class>
+                </design_theme_favicon>
                 <html_head_default_title>
                     <disabled>0</disabled>
                     <name><![CDATA[HTML Head Default Title]]></name>
