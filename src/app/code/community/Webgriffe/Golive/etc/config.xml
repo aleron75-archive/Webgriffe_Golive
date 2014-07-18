@@ -113,6 +113,48 @@
                     <xml_config_path><![CDATA[design/head/demonotice]]></xml_config_path>
                     <default_config_value><![CDATA[1]]></default_config_value>
                 </html_head_demo_notice>
+                <design_image_placeholder>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Image Placeholder]]></name>
+                    <description><![CDATA[Image Placeholder on File System]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_design_imagePlaceholder</class>
+                    <!--
+                        Value calculated on Magento v 1.8.1.0;
+                        it's recommended to update value on different version.
+                        To obtain the md5sum of a file, run the command:
+                        $ md5sum <filename>
+                     -->
+                    <md5sum><![CDATA[097ab8a3051bc037ea3de0e17f440540]]></md5sum>
+                </design_image_placeholder>
+                <design_smallimage_placeholder>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Small Image Placeholder]]></name>
+                    <description><![CDATA[Small Image Placeholder on File System]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_design_SmallimagePlaceholder</class>
+                    <!--
+                        Value calculated on Magento v 1.8.1.0;
+                        it's recommended to update value on different version.
+                        To obtain the md5sum of a file, run the command:
+                        $ md5sum <filename>
+                     -->
+                    <md5sum><![CDATA[f825d16f97a640453553c79c48ebaa73]]></md5sum>
+                </design_smallimage_placeholder>
+                <design_thumbnail_placeholder>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Thumbnail Placeholder]]></name>
+                    <description><![CDATA[Thumbnail Placeholder on File System]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_design_ThumbnailPlaceholder</class>
+                    <!--
+                        Value calculated on Magento v 1.8.1.0;
+                        it's recommended to update value on different version.
+                        To obtain the md5sum of a file, run the command:
+                        $ md5sum <filename>
+                     -->
+                    <md5sum><![CDATA[b2b682d28a08a748a73d2cda70ab5a57]]></md5sum>
+                </design_thumbnail_placeholder>
             </checkers>
         </webgriffe_golive>
     </default>
