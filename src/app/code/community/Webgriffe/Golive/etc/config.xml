@@ -351,6 +351,78 @@
                     <class>webgriffe_golive/checker_data_emptyEntityCollection</class>
                     <entity_type><![CDATA[customer/address]]></entity_type>
                 </empty_customeraddress_collection>
+                <indexstatus_catalog_product_attribute>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Catalog Product Attribute Index]]></name>
+                    <description><![CDATA[Catalog Product Attribute Index]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_data_indexStatus</class>
+                    <process_code><![CDATA[catalog_product_attribute]]></process_code>
+                </indexstatus_catalog_product_attribute>
+                <indexstatus_catalog_product_price>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Catalog Product Price Index]]></name>
+                    <description><![CDATA[Catalog Product Price Index]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_data_indexStatus</class>
+                    <process_code><![CDATA[catalog_product_price]]></process_code>
+                </indexstatus_catalog_product_price>
+                <indexstatus_catalog_url>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Catalog URL Index]]></name>
+                    <description><![CDATA[Catalog URL Index]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_data_indexStatus</class>
+                    <process_code><![CDATA[catalog_url]]></process_code>
+                </indexstatus_catalog_url>
+                <indexstatus_catalog_product_flat>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Catalog Product Flat Index]]></name>
+                    <description><![CDATA[Catalog Product Flat Index]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_data_indexStatus</class>
+                    <process_code><![CDATA[catalog_product_flat]]></process_code>
+                </indexstatus_catalog_product_flat>
+                <indexstatus_catalog_category_flat>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Catalog Category Flat Index]]></name>
+                    <description><![CDATA[Catalog Category Flat Index]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_data_indexStatus</class>
+                    <process_code><![CDATA[catalog_category_flat]]></process_code>
+                </indexstatus_catalog_category_flat>
+                <indexstatus_catalog_category_product>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Catalog Category Product Index]]></name>
+                    <description><![CDATA[Catalog Category Product Index]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_data_indexStatus</class>
+                    <process_code><![CDATA[catalog_category_product]]></process_code>
+                </indexstatus_catalog_category_product>
+                <indexstatus_catalogsearch_fulltext>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Catalog Search Fulltext Index]]></name>
+                    <description><![CDATA[Catalog Search Fulltext Index]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_data_indexStatus</class>
+                    <process_code><![CDATA[catalogsearch_fulltext]]></process_code>
+                </indexstatus_catalogsearch_fulltext>
+                <indexstatus_cataloginventory_stock>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Catalog Inventory Stock Index]]></name>
+                    <description><![CDATA[Catalog Inventory Stock Index]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_data_indexStatus</class>
+                    <process_code><![CDATA[cataloginventory_stock]]></process_code>
+                </indexstatus_cataloginventory_stock>
+                <indexstatus_tag_summary>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Tag Summary Index]]></name>
+                    <description><![CDATA[Tag Summary Index]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_data_indexStatus</class>
+                    <process_code><![CDATA[tag_summary]]></process_code>
+                </indexstatus_tag_summary>
             </checkers>
         </webgriffe_golive>
     </default>
