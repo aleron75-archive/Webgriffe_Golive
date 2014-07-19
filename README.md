@@ -86,17 +86,20 @@ array(51) {
 
 Checkers are declared and activated through the config.xml file.
 
-Some of them can be used to check different configuration values simply
-by duplicating them and changing some parameter values.
+New checks can be added by simply copying a checker configuration node in the
+config.xml file and changing what is need to be changed.
+
+Others require a Checker Class to be written; it usually takes only a few lines
+of code. Take a look at existing ones to learn how to write your own.
 
 Each Checker returns one of the following exit code:
 
-* error
-* warning
-* none
+* __error__: the check failed and severity was set to error
+* __warning__: the check failed and severity was set to warning
+* __none__: the check passed
+* __skip__: the check couldn't be applied (for example: Google Analytics Account Number check is skipped if GA is not activated)
 
-The shell script exits with an error code if and only if there is at least
-one Checker which gives an error.
+The shell script exit code corresponds to the number of errors found.
 
 Checker's exit code severity can be configured. They come with default severity
 exit codes based on personal experience but feel free to change them based on
