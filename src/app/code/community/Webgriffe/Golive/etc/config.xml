@@ -327,6 +327,14 @@
                     <class>webgriffe_golive/checker_data_emptyEntityCollection</class>
                     <entity_type><![CDATA[sales/order_payment]]></entity_type>
                 </empty_payment_collection>
+                <empty_transaction_collection>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Test Transactions]]></name>
+                    <description><![CDATA[Test Transactions]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_data_emptyEntityCollection</class>
+                    <entity_type><![CDATA[sales/order_payment_transaction]]></entity_type>
+                </empty_transaction_collection>
             </checkers>
         </webgriffe_golive>
     </default>
