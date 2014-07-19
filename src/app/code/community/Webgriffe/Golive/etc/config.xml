@@ -287,6 +287,14 @@
                     <xml_config_path><![CDATA[shipping/origin/postcode]]></xml_config_path>
                     <default_config_value><![CDATA[90034]]></default_config_value>
                 </shipping_origin_postcode>
+                <empty_order_collection>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Test Orders]]></name>
+                    <description><![CDATA[Test Orders]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_data_emptyEntityCollection</class>
+                    <entity_type><![CDATA[sales/order]]></entity_type>
+                </empty_order_collection>
             </checkers>
         </webgriffe_golive>
     </default>
