@@ -479,6 +479,22 @@
                     <class>webgriffe_golive/checker_data_cacheEnabled</class>
                     <cache_type><![CDATA[translate]]></cache_type>
                 </cache_enabled_translate>
+                <google_analytics_activated>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Google Analytics Activated]]></name>
+                    <description><![CDATA[System > Configuration > SALES > Google API > Google Analytics > Enable]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[google/analytics/active]]></xml_config_path>
+                    <default_config_value><![CDATA[0]]></default_config_value>
+                </google_analytics_activated>
+                <google_analytics_accountnumber>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Google Analytics Account Number]]></name>
+                    <description><![CDATA[If GA is enabled, an Account Number should be configured]]></description>
+                    <default_severity>error</default_severity>
+                    <class>webgriffe_golive/checker_config_gaAccountNumber</class>
+                </google_analytics_accountnumber>
             </checkers>
         </webgriffe_golive>
     </default>

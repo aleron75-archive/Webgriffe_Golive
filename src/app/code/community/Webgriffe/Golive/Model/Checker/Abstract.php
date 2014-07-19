@@ -4,6 +4,7 @@ abstract class Webgriffe_Golive_Model_Checker_Abstract extends Varien_Object
     const SEVERITY_ERROR    = 'error';
     const SEVERITY_WARNING  = 'warning';
     const SEVERITY_NONE     = 'passed';
+    const SEVERITY_SKIP     = 'skipped';
 
     /** @var  Webgriffe_Golive_Helper_Log */
     protected $_logger;

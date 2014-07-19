@@ -25,6 +25,7 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
         printf("done!".PHP_EOL);
 
         $severityCount = array(
+            Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_SKIP => 0,
             Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_NONE => 0,
             Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_WARNING => 0,
             Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_ERROR => 0
@@ -36,6 +37,7 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
         printf("Errors: %d".PHP_EOL, $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_ERROR]);
         printf("Warnings: %d".PHP_EOL, $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_WARNING]);
         printf("Passed: %d".PHP_EOL, $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_NONE]);
+        printf("Skipped: %d".PHP_EOL, $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_SKIP]);
 
         Zend_Debug::dump($result, 'Detailed result');
 
