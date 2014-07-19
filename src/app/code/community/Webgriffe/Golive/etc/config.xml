@@ -251,6 +251,15 @@
                     <xml_config_path><![CDATA[tax/classes/shipping_tax_class]]></xml_config_path>
                     <default_config_value><![CDATA[0]]></default_config_value>
                 </shipping_tax_class>
+                <tax_calculation_destination_country>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Default Destination Country for Tax Calculation]]></name>
+                    <description><![CDATA[System > Configuration > SALES > Tax > Default Tax Destination Calculation > Default Country]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[tax/defaults/country]]></xml_config_path>
+                    <default_config_value><![CDATA[US]]></default_config_value>
+                </tax_calculation_destination_country>
             </checkers>
         </webgriffe_golive>
     </default>
