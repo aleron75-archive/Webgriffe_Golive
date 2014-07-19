@@ -313,12 +313,20 @@
                 </empty_shipment_collection>
                 <empty_creditmemo_collection>
                     <disabled>0</disabled>
-                    <name><![CDATA[Test Credimemo]]></name>
-                    <description><![CDATA[Test Creditmemo]]></description>
+                    <name><![CDATA[Test Credimemos]]></name>
+                    <description><![CDATA[Test Creditmemos]]></description>
                     <default_severity>warning</default_severity>
                     <class>webgriffe_golive/checker_data_emptyEntityCollection</class>
                     <entity_type><![CDATA[sales/order_creditmemo]]></entity_type>
                 </empty_creditmemo_collection>
+                <empty_payment_collection>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Test Payments]]></name>
+                    <description><![CDATA[Test Payments]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_data_emptyEntityCollection</class>
+                    <entity_type><![CDATA[sales/order_payment]]></entity_type>
+                </empty_payment_collection>
             </checkers>
         </webgriffe_golive>
     </default>
