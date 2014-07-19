@@ -295,6 +295,15 @@
                     <class>webgriffe_golive/checker_data_emptyEntityCollection</class>
                     <entity_type><![CDATA[sales/order]]></entity_type>
                 </empty_order_collection>
+                <empty_invoice_collection>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Test Invoices]]></name>
+                    <description><![CDATA[Test Invoices]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_data_emptyEntityCollection</class>
+                    <entity_type><![CDATA[sales/order_invoice
+                    ]]></entity_type>
+                </empty_invoice_collection>
             </checkers>
         </webgriffe_golive>
     </default>
