@@ -260,6 +260,33 @@
                     <xml_config_path><![CDATA[tax/defaults/country]]></xml_config_path>
                     <default_config_value><![CDATA[US]]></default_config_value>
                 </tax_calculation_destination_country>
+                <shipping_origin_country>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Shipping Origin Country]]></name>
+                    <description><![CDATA[System > Configuration > SALES > Shipping Settings > Origin > Country]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[shipping/origin/country_id]]></xml_config_path>
+                    <default_config_value><![CDATA[US]]></default_config_value>
+                </shipping_origin_country>
+                <shipping_origin_regionstate>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Shipping Origin Region/State]]></name>
+                    <description><![CDATA[System > Configuration > SALES > Shipping Settings > Origin > Region/State]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[shipping/origin/region_id]]></xml_config_path>
+                    <default_config_value><![CDATA[12]]></default_config_value>
+                </shipping_origin_regionstate>
+                <shipping_origin_postcode>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Shipping Origin ZIP/Postal Code]]></name>
+                    <description><![CDATA[System > Configuration > SALES > Shipping Settings > Origin > ZIP/Postal Code]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[shipping/origin/postcode]]></xml_config_path>
+                    <default_config_value><![CDATA[90034]]></default_config_value>
+                </shipping_origin_postcode>
             </checkers>
         </webgriffe_golive>
     </default>
