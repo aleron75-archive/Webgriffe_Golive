@@ -21,14 +21,15 @@ $ php shell/golive.php --domain www.yourdomain.com
 At the moment the output is something ugly like:
 
 ```
-Active Checkers found: 17
+Active Checkers found: 51
 Checking current Magento installation... done!
 Errors: 0
-Warnings: 13
-Passed: 4
+Warnings: 31
+Passed: 19
+Skipped: 1
 
 Detailed result
-array(17) {
+array(51) {
   ["config_general_web_unsecure_base_url"] => string(6) "passed"
   ["config_general_web_secure_base_url"] => string(6) "passed"
   ["design_root_favicon"] => string(7) "warning"
@@ -46,6 +47,40 @@ array(17) {
   ["store_info_vatnumber"] => string(7) "warning"
   ["store_info_name"] => string(7) "warning"
   ["store_info_phone"] => string(7) "warning"
+  ["design_theme_logo"] => string(7) "warning"
+  ["design_theme_logoemail"] => string(7) "warning"
+  ["design_theme_logoprint"] => string(7) "warning"
+  ["shipping_tax_class"] => string(7) "warning"
+  ["tax_calculation_destination_country"] => string(7) "warning"
+  ["shipping_origin_country"] => string(7) "warning"
+  ["shipping_origin_regionstate"] => string(7) "warning"
+  ["shipping_origin_postcode"] => string(7) "warning"
+  ["empty_order_collection"] => string(6) "passed"
+  ["empty_invoice_collection"] => string(6) "passed"
+  ["empty_shipment_collection"] => string(6) "passed"
+  ["empty_creditmemo_collection"] => string(6) "passed"
+  ["empty_payment_collection"] => string(6) "passed"
+  ["empty_transaction_collection"] => string(6) "passed"
+  ["empty_customer_collection"] => string(7) "warning"
+  ["empty_customeraddress_collection"] => string(7) "warning"
+  ["indexstatus_catalog_product_attribute"] => string(6) "passed"
+  ["indexstatus_catalog_product_price"] => string(6) "passed"
+  ["indexstatus_catalog_url"] => string(6) "passed"
+  ["indexstatus_catalog_product_flat"] => string(6) "passed"
+  ["indexstatus_catalog_category_flat"] => string(6) "passed"
+  ["indexstatus_catalog_category_product"] => string(6) "passed"
+  ["indexstatus_catalogsearch_fulltext"] => string(6) "passed"
+  ["indexstatus_cataloginventory_stock"] => string(6) "passed"
+  ["indexstatus_tag_summary"] => string(6) "passed"
+  ["cache_enabled_block_html"] => string(7) "warning"
+  ["cache_enabled_collections"] => string(7) "warning"
+  ["cache_enabled_config"] => string(7) "warning"
+  ["cache_enabled_config_api"] => string(7) "warning"
+  ["cache_enabled_eav"] => string(7) "warning"
+  ["cache_enabled_layout"] => string(7) "warning"
+  ["cache_enabled_translate"] => string(7) "warning"
+  ["google_analytics_activated"] => string(7) "warning"
+  ["google_analytics_accountnumber"] => string(7) "skipped"
 }
 ```
 
