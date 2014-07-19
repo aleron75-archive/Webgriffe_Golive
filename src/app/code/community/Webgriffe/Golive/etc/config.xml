@@ -301,9 +301,16 @@
                     <description><![CDATA[Test Invoices]]></description>
                     <default_severity>warning</default_severity>
                     <class>webgriffe_golive/checker_data_emptyEntityCollection</class>
-                    <entity_type><![CDATA[sales/order_invoice
-                    ]]></entity_type>
+                    <entity_type><![CDATA[sales/order_invoice]]></entity_type>
                 </empty_invoice_collection>
+                <empty_shipment_collection>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Test Shipments]]></name>
+                    <description><![CDATA[Test Shipments]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_data_emptyEntityCollection</class>
+                    <entity_type><![CDATA[sales/order_shipment]]></entity_type>
+                </empty_shipment_collection>
             </checkers>
         </webgriffe_golive>
     </default>
