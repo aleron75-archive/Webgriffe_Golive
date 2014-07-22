@@ -521,6 +521,24 @@
                     <fault_operand>eq</fault_operand>
                     <count>0</count>
                 </sitemap>
+                <logclean>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Log Cleaning]]></name>
+                    <description><![CDATA[System > Configuration > ADVANCED > System > Log Cleaning > Enable Log Cleaning]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[system/log/enabled]]></xml_config_path>
+                    <default_config_value><![CDATA[0]]></default_config_value>
+                </logclean>
+                <logclean_erroremail>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Error Email Recipient]]></name>
+                    <description><![CDATA[System > Configuration > ADVANCED > System > Log Cleaning > Error Email Recipient]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[system/log/error_email]]></xml_config_path>
+                    <default_config_value><![CDATA[]]></default_config_value>
+                </logclean_erroremail>
             </checkers>
         </webgriffe_golive>
     </default>
