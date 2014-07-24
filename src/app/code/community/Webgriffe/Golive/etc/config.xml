@@ -113,6 +113,33 @@
                     <xml_config_path><![CDATA[design/head/demonotice]]></xml_config_path>
                     <default_config_value><![CDATA[1]]></default_config_value>
                 </html_head_demo_notice>
+                <header_logo_img_alt>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Header Logo Image Alternate Text]]></name>
+                    <description><![CDATA[System > Configuration > GENERAL > Design > Header > Logo Image Alt]]></description>
+                    <default_severity>error</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[design/header/logo_alt]]></xml_config_path>
+                    <default_config_value><![CDATA[Magento Commerce]]></default_config_value>
+                </header_logo_img_alt>
+                <header_welcome_text>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Header Welcome Text]]></name>
+                    <description><![CDATA[System > Configuration > GENERAL > Design > Header > Welcome Text]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[design/header/welcome]]></xml_config_path>
+                    <default_config_value><![CDATA[Default welcome msg!]]></default_config_value>
+                </header_welcome_text>
+                <footer_copyright>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Footer Copyright]]></name>
+                    <description><![CDATA[System > Configuration > GENERAL > Design > Footer > Copyright]]></description>
+                    <default_severity>error</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[design/footer/copyright]]></xml_config_path>
+                    <default_config_value><![CDATA[&copy; 2013 Magento Demo Store. All Rights Reserved.]]></default_config_value>
+                </footer_copyright>
                 <design_image_placeholder>
                     <disabled>0</disabled>
                     <name><![CDATA[Image Placeholder]]></name>
