@@ -539,6 +539,51 @@
                     <xml_config_path><![CDATA[system/log/error_email]]></xml_config_path>
                     <default_config_value><![CDATA[]]></default_config_value>
                 </logclean_erroremail>
+                <email_communications>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Email Communications]]></name>
+                    <description><![CDATA[System > Configuration > ADVANCED > System > Mail Sending Settings > Disable Email Communications]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[system/smtp/disable]]></xml_config_path>
+                    <default_config_value><![CDATA[1]]></default_config_value>
+                </email_communications>
+                <dev_log>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Log Enabled]]></name>
+                    <description><![CDATA[System > Configuration > ADVANCED > Developer > Log Settings > Enabled]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[dev/log/active]]></xml_config_path>
+                    <default_config_value><![CDATA[1]]></default_config_value>
+                </dev_log>
+                <dev_profiler>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Profiler Enabled]]></name>
+                    <description><![CDATA[System > Configuration > ADVANCED > Developer > Debug > Profiler]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[dev/debug/profiler]]></xml_config_path>
+                    <default_config_value><![CDATA[1]]></default_config_value>
+                </dev_profiler>
+                <dev_template_hints>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Template Path Hints]]></name>
+                    <description><![CDATA[System > Configuration > ADVANCED > Developer > Debug > Template Path Hints]]></description>
+                    <default_severity>error</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[dev/debug/template_hints]]></xml_config_path>
+                    <default_config_value><![CDATA[1]]></default_config_value>
+                </dev_template_hints>
+                <dev_translate_inline_frontend>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Translate Inline Frontend]]></name>
+                    <description><![CDATA[System > Configuration > ADVANCED > Developer > Translate Inline > Enabled for Frontend]]></description>
+                    <default_severity>error</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[dev/translate_inline/active]]></xml_config_path>
+                    <default_config_value><![CDATA[1]]></default_config_value>
+                </dev_translate_inline_frontend>
             </checkers>
         </webgriffe_golive>
     </default>
