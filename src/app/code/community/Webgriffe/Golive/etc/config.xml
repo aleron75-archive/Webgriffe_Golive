@@ -279,6 +279,96 @@
                      -->
                     <md5sum><![CDATA[8de347192e0524cff7a69e4020182dbd]]></md5sum>
                 </design_theme_logoprint>
+                <store_email_general_name>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Store Email General Sender Name]]></name>
+                    <description><![CDATA[System > Configuration > GENERAL > Store Email Addresses > General Contact > Sender Name]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[trans_email/ident_general/name]]></xml_config_path>
+                    <default_config_value><![CDATA[Owner]]></default_config_value>
+                </store_email_general_name>
+                <store_email_general_sender>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Store Email General Sender Address]]></name>
+                    <description><![CDATA[System > Configuration > GENERAL > Store Email Addresses > General Contact > Sender Email]]></description>
+                    <default_severity>error</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[trans_email/ident_general/email]]></xml_config_path>
+                    <default_config_value><![CDATA[owner@example.com]]></default_config_value>
+                </store_email_general_sender>
+                <store_email_sales_name>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Store Email Sales Representative Sender Name]]></name>
+                    <description><![CDATA[System > Configuration > GENERAL > Store Email Addresses > Sales Representative > Sender Name]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[trans_email/ident_sales/name]]></xml_config_path>
+                    <default_config_value><![CDATA[Sales]]></default_config_value>
+                </store_email_sales_name>
+                <store_email_sales_sender>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Store Email Sales Representative Sender Address]]></name>
+                    <description><![CDATA[System > Configuration > GENERAL > Store Email Addresses > Sales Representative > Sender Email]]></description>
+                    <default_severity>error</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[trans_email/ident_sales/email]]></xml_config_path>
+                    <default_config_value><![CDATA[sales@example.com]]></default_config_value>
+                </store_email_sales_sender>
+                <store_email_support_name>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Store Email Customer Support Sender Name]]></name>
+                    <description><![CDATA[System > Configuration > GENERAL > Store Email Addresses > Customer Support > Sender Name]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[trans_email/ident_support/name]]></xml_config_path>
+                    <default_config_value><![CDATA[CustomerSupport]]></default_config_value>
+                </store_email_support_name>
+                <store_email_support_sender>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Store Email Customer Support Sender Address]]></name>
+                    <description><![CDATA[System > Configuration > GENERAL > Store Email Addresses > Customer Support > Sender Email]]></description>
+                    <default_severity>error</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[trans_email/ident_support/email]]></xml_config_path>
+                    <default_config_value><![CDATA[support@example.com]]></default_config_value>
+                </store_email_support_sender>
+                <store_email_custom1_name>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Store Email Custom Email 1 Sender Name]]></name>
+                    <description><![CDATA[System > Configuration > GENERAL > Store Email Addresses > Custom Email 1  > Sender Name]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[trans_email/ident_custom1/name]]></xml_config_path>
+                    <default_config_value><![CDATA[Custom 1]]></default_config_value>
+                </store_email_custom1_name>
+                <store_email_custom1_sender>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Store Email Custom Email 1 Sender Address]]></name>
+                    <description><![CDATA[System > Configuration > GENERAL > Store Email Addresses > Custom Email 1 > Sender Email]]></description>
+                    <default_severity>error</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[trans_email/ident_custom1/email]]></xml_config_path>
+                    <default_config_value><![CDATA[custom1@example.com]]></default_config_value>
+                </store_email_custom1_sender>
+                <store_email_custom2_name>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Store Email Custom Email 2 Sender Name]]></name>
+                    <description><![CDATA[System > Configuration > GENERAL > Store Email Addresses > Custom Email 2  > Sender Name]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[trans_email/ident_custom2/name]]></xml_config_path>
+                    <default_config_value><![CDATA[Custom 2]]></default_config_value>
+                </store_email_custom2_name>
+                <store_email_custom2_sender>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Store Email Custom Email 2 Sender Address]]></name>
+                    <description><![CDATA[System > Configuration > GENERAL > Store Email Addresses > Custom Email 2 > Sender Email]]></description>
+                    <default_severity>error</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[trans_email/ident_custom2/email]]></xml_config_path>
+                    <default_config_value><![CDATA[custom2@example.com]]></default_config_value>
+                </store_email_custom2_sender>
                 <shipping_tax_class>
                     <disabled>0</disabled>
                     <name><![CDATA[Shipping Tax Class]]></name>
