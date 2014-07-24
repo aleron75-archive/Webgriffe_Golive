@@ -200,6 +200,16 @@
                     <xml_config_path><![CDATA[general/store_information/phone]]></xml_config_path>
                     <default_config_value><![CDATA[]]></default_config_value>
                 </store_info_phone>
+                <cookie_lifetime>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Cookie Lifetime]]></name>
+                    <description><![CDATA[System > Configuration > GENERAL > Web > Session Cookie Management > Cookie Lifetime]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[web/cookie/cookie_lifetime]]></xml_config_path>
+                    <fault_operand>neq</fault_operand>
+                    <default_config_value><![CDATA[3600]]></default_config_value>
+                </cookie_lifetime>
                 <design_theme_logo>
                     <disabled>0</disabled>
                     <name><![CDATA[Theme Logo]]></name>
