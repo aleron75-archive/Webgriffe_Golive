@@ -21,6 +21,7 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
 
         $golive = new Webgriffe_Golive_Model_Core();
 
+        printf("Webgriffe Go Live %s".PHP_EOL, Mage::helper('webgriffe_golive')->getVersion());
         printf("Active Checkers found: %d".PHP_EOL, $golive->getCheckersCount());
         printf("Checking current Magento installation... ");
         $result = $golive->check($parameters);
@@ -83,7 +84,9 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
      */
     public function usageHelp()
     {
+        $version = Mage::helper('webgriffe_golive')->getVersion();
         return <<<USAGE
+Webgriffe Go Live v $version
 Usage:  php -f golive.php -- [options]
         php -f golive.php --domain www.yourdomain.com
 
