@@ -53,6 +53,14 @@ class Webgriffe_Golive_Model_Core
         return $result;
     }
 
+    public function getChecker($code)
+    {
+        if (isset($this->_checkers[$code])) {
+            return $this->_checkers[$code];
+        }
+        return null;
+    }
+
     protected function _getCheckerInstance($nodeName, $nodeContent)
     {
         if (!isset($nodeContent['name'])) {
