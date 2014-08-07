@@ -18,70 +18,94 @@ Checkers can be run through an easy-to-use shell script:
 $ php shell/golive.php --domain www.yourdomain.com
 ```
 
-At the moment the output is something ugly like:
+The output is something like:
 
 ```
-Active Checkers found: 51
+Webgriffe Go Live 0.1.0
+Active Checkers found: 73
 Checking current Magento installation... done!
-Errors: 0
-Warnings: 31
-Passed: 19
-Skipped: 1
 
-Detailed result
-array(51) {
-  ["config_general_web_unsecure_base_url"] => string(6) "passed"
-  ["config_general_web_secure_base_url"] => string(6) "passed"
-  ["design_root_favicon"] => string(7) "warning"
-  ["design_theme_favicon"] => string(7) "warning"
-  ["html_head_default_title"] => string(7) "warning"
-  ["html_head_default_description"] => string(7) "warning"
-  ["html_head_default_keywords"] => string(7) "warning"
-  ["html_head_default_robots"] => string(6) "passed"
-  ["html_head_demo_notice"] => string(6) "passed"
-  ["design_image_placeholder"] => string(7) "warning"
-  ["design_smallimage_placeholder"] => string(7) "warning"
-  ["design_thumbnail_placeholder"] => string(7) "warning"
-  ["store_info_address"] => string(7) "warning"
-  ["store_info_country"] => string(7) "warning"
-  ["store_info_vatnumber"] => string(7) "warning"
-  ["store_info_name"] => string(7) "warning"
-  ["store_info_phone"] => string(7) "warning"
-  ["design_theme_logo"] => string(7) "warning"
-  ["design_theme_logoemail"] => string(7) "warning"
-  ["design_theme_logoprint"] => string(7) "warning"
-  ["shipping_tax_class"] => string(7) "warning"
-  ["tax_calculation_destination_country"] => string(7) "warning"
-  ["shipping_origin_country"] => string(7) "warning"
-  ["shipping_origin_regionstate"] => string(7) "warning"
-  ["shipping_origin_postcode"] => string(7) "warning"
-  ["empty_order_collection"] => string(6) "passed"
-  ["empty_invoice_collection"] => string(6) "passed"
-  ["empty_shipment_collection"] => string(6) "passed"
-  ["empty_creditmemo_collection"] => string(6) "passed"
-  ["empty_payment_collection"] => string(6) "passed"
-  ["empty_transaction_collection"] => string(6) "passed"
-  ["empty_customer_collection"] => string(7) "warning"
-  ["empty_customeraddress_collection"] => string(7) "warning"
-  ["indexstatus_catalog_product_attribute"] => string(6) "passed"
-  ["indexstatus_catalog_product_price"] => string(6) "passed"
-  ["indexstatus_catalog_url"] => string(6) "passed"
-  ["indexstatus_catalog_product_flat"] => string(6) "passed"
-  ["indexstatus_catalog_category_flat"] => string(6) "passed"
-  ["indexstatus_catalog_category_product"] => string(6) "passed"
-  ["indexstatus_catalogsearch_fulltext"] => string(6) "passed"
-  ["indexstatus_cataloginventory_stock"] => string(6) "passed"
-  ["indexstatus_tag_summary"] => string(6) "passed"
-  ["cache_enabled_block_html"] => string(7) "warning"
-  ["cache_enabled_collections"] => string(7) "warning"
-  ["cache_enabled_config"] => string(7) "warning"
-  ["cache_enabled_config_api"] => string(7) "warning"
-  ["cache_enabled_eav"] => string(7) "warning"
-  ["cache_enabled_layout"] => string(7) "warning"
-  ["cache_enabled_translate"] => string(7) "warning"
-  ["google_analytics_activated"] => string(7) "warning"
-  ["google_analytics_accountnumber"] => string(7) "skipped"
-}
+|  ID | Checked                                         | Result  |
+| --- | ----------------------------------------------- | ------- |
+|   1 | Unsecure Base URL                               | passed  |
+|   2 | Secure Base URL                                 | passed  |
+|   3 | Root Favicon                                    | warning |
+|   4 | Theme Favicon                                   | warning |
+|   5 | HTML Head Default Title                         | warning |
+|   6 | HTML Head Default Description                   | warning |
+|   7 | HTML Head Default Keywords                      | warning |
+|   8 | HTML Head Default Robots                        | passed  |
+|   9 | HTML Head Demo Notice                           | passed  |
+|  10 | Header Logo Image Alternate Text                | error   |
+|  11 | Header Welcome Text                             | warning |
+|  12 | Footer Copyright                                | error   |
+|  13 | Image Placeholder                               | warning |
+|  14 | Small Image Placeholder                         | warning |
+|  15 | Thumbnail Placeholder                           | warning |
+|  16 | Store Information Contact Address               | warning |
+|  17 | Store Information Country                       | warning |
+|  18 | Store Information VAT Number                    | warning |
+|  19 | Store Information Name                          | warning |
+|  20 | Store Information Phone                         | warning |
+|  21 | Cookie Lifetime                                 | passed  |
+|  22 | Theme Logo                                      | warning |
+|  23 | Theme Email Logo                                | warning |
+|  24 | Theme Print Logo                                | warning |
+|  25 | Store Email General Sender Name                 | warning |
+|  26 | Store Email General Sender Address              | error   |
+|  27 | Store Email Sales Representative Sender Name    | warning |
+|  28 | Store Email Sales Representative Sender Address | error   |
+|  29 | Store Email Customer Support Sender Name        | warning |
+|  30 | Store Email Customer Support Sender Address     | error   |
+|  31 | Store Email Custom Email 1 Sender Name          | warning |
+|  32 | Store Email Custom Email 1 Sender Address       | error   |
+|  33 | Store Email Custom Email 2 Sender Name          | warning |
+|  34 | Store Email Custom Email 2 Sender Address       | error   |
+|  35 | Shipping Tax Class                              | warning |
+|  36 | Default Destination Country for Tax Calculation | warning |
+|  37 | Shipping Origin Country                         | warning |
+|  38 | Shipping Origin Region/State                    | warning |
+|  39 | Shipping Origin ZIP/Postal Code                 | warning |
+|  40 | Test Orders                                     | passed  |
+|  41 | Test Invoices                                   | passed  |
+|  42 | Test Shipments                                  | passed  |
+|  43 | Test Credimemos                                 | passed  |
+|  44 | Test Payments                                   | passed  |
+|  45 | Test Transactions                               | passed  |
+|  46 | Test Customers                                  | warning |
+|  47 | Test Customer Addresses                         | warning |
+|  48 | Catalog Product Attribute Index                 | passed  |
+|  49 | Catalog Product Price Index                     | passed  |
+|  50 | Catalog URL Index                               | passed  |
+|  51 | Catalog Product Flat Index                      | passed  |
+|  52 | Catalog Category Flat Index                     | passed  |
+|  53 | Catalog Category Product Index                  | passed  |
+|  54 | Catalog Search Fulltext Index                   | passed  |
+|  55 | Catalog Inventory Stock Index                   | passed  |
+|  56 | Tag Summary Index                               | passed  |
+|  57 | Block Html Cache                                | warning |
+|  58 | Collections Cache                               | warning |
+|  59 | Config Cache                                    | warning |
+|  60 | Config API Cache                                | warning |
+|  61 | EAV Cache                                       | warning |
+|  62 | Layout Cache                                    | warning |
+|  63 | Translate Cache                                 | warning |
+|  64 | Google Analytics Activated                      | warning |
+|  65 | Google Analytics Account Number                 | skipped |
+|  66 | Sitemap                                         | warning |
+|  67 | Log Cleaning                                    | warning |
+|  68 | Error Email Recipient                           | warning |
+|  69 | Email Communications                            | passed  |
+|  70 | Log Enabled                                     | warning |
+|  71 | Profiler Enabled                                | passed  |
+|  72 | Template Path Hints                             | passed  |
+|  73 | Translate Inline Frontend                       | passed  |
+| ----------------------------------------------------- | ------- |
+|                                                Errors | 7       |
+|                                              Warnings | 41      |
+|                                                Passed | 24      |
+|                                               Skipped | 1       |
+| ----------------------------------------------------- | ------- |
 ```
 
 Checkers are declared and activated through the config.xml file.
