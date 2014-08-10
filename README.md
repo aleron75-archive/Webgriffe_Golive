@@ -1,9 +1,78 @@
 Webgriffe_Golive
 ================
 
+Introduction
+------------
+
 Golive extension can be helpful either before a site launch or in continuous
 integration environment to ensure that changes to Magento settings don't
 compromise the site.
+
+Installation
+------------
+
+You can install this extension in several ways:
+
+**Download**
+
+Download the full package, copy the content of the ```src``` directory
+in your magento base directory; pay attention not to overwrite
+the ```app``` and  ```shell``` folder, only merge their contents into existing
+directories;
+
+** Modman **
+
+To install modman Module Manager: https://github.com/colinmollenhour/modman
+
+After having installed modman on your system, you can clone this module on your
+Magento base directory by typing the following command:
+
+```
+$ modman init
+$ modman clone git@github.com:aleron75/Webgriffe_Golive.git
+```
+
+** Composer **
+
+Add the dependency to your ```composer.json```:
+
+```
+{
+  ...
+  "require-dev": {
+    ...
+    "aleron75/webgriffe_tph-pro": "dev-master",
+    ...
+  },
+  "repositories": [
+    ...
+    {
+      "type": "vcs",
+      "url":  "git@github.com:aleron75/Webgriffe_Golive.git"
+    },
+    ...
+  ],
+  ...
+}
+
+
+```
+
+Then run the following command:
+
+```
+$ composer update aleron75/webgriffe_golive
+```
+
+** Common tasks **
+
+After installation:
+
+* if you have cache enabled, disable or refresh it;
+* if you have compilation enabled, disable or recompile it.
+
+Usage
+------------
 
 The extension is a collection of so called 'Checkers', small classes whose
 single responsibility is that of checking whether your Magento installation
