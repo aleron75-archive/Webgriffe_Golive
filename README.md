@@ -20,7 +20,7 @@ in your magento base directory; pay attention not to overwrite
 the ```app``` and  ```shell``` folder, only merge their contents into existing
 directories;
 
-** Modman **
+**Modman**
 
 To install modman Module Manager: https://github.com/colinmollenhour/modman
 
@@ -32,7 +32,7 @@ $ modman init
 $ modman clone git@github.com:aleron75/Webgriffe_Golive.git
 ```
 
-** Composer **
+**Composer**
 
 Add the dependency to your ```composer.json```:
 
@@ -64,7 +64,7 @@ Then run the following command:
 $ composer update aleron75/webgriffe_golive
 ```
 
-** Common tasks **
+**Common tasks**
 
 After installation:
 
