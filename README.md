@@ -22,7 +22,7 @@ directories;
 
 **Modman**
 
-To install modman Module Manager: https://github.com/colinmollenhour/modman
+Install modman Module Manager: https://github.com/colinmollenhour/modman
 
 After having installed modman on your system, you can clone this module on your
 Magento base directory by typing the following command:
@@ -34,12 +34,16 @@ $ modman clone git@github.com:aleron75/Webgriffe_Golive.git
 
 **Composer**
 
+Install composer: http://getcomposer.org/download/
+
+Install Magento Composer: https://github.com/magento-hackathon/magento-composer-installer
+
 Add the dependency to your ```composer.json```:
 
 ```
 {
   ...
-  "require-dev": {
+  "require": {
     ...
     "aleron75/webgriffe_tph-pro": "dev-master",
     ...
@@ -53,15 +57,24 @@ Add the dependency to your ```composer.json```:
     ...
   ],
   ...
+  "extra": {
+    "magento-root-dir": "<magento_installation_dir>/"
+  }
+  ...
 }
-
-
 ```
 
-Then run the following command:
+Then run the following command from the directory where your ```composer.json```
+file is contained:
 
 ```
-$ composer update aleron75/webgriffe_golive
+php composer.phar install
+```
+
+or
+
+```
+$ composer install
 ```
 
 **Common tasks**
@@ -69,7 +82,7 @@ $ composer update aleron75/webgriffe_golive
 After installation:
 
 * if you have cache enabled, disable or refresh it;
-* if you have compilation enabled, disable or recompile it.
+* if you have compilation enabled, disable it or recompile the code base.
 
 Usage
 ------------
