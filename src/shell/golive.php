@@ -34,7 +34,7 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
         foreach ($result as $key => $val) {
             $severityCount[$val] ++;
             $checker = $golive->getChecker($key);
-            $maxlen = max ($maxlen, strlen($checker->getName()));
+            $maxlen = max($maxlen, strlen($checker->getName()));
         }
 
         $mask = "| %3.3s | %-".$maxlen.".".$maxlen."s | %-7.7s |\n";
@@ -68,8 +68,6 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
         printf($mask, "Passed", $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_NONE]);
         printf($mask, "Skipped", $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_SKIP]);
         printf($mask, str_repeat('-', $maxlen+6), str_repeat('-', 7));
-
-
         printf(PHP_EOL);
         exit($severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_ERROR]);
     }
@@ -100,7 +98,7 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
         parent::_validate();
 
         if (!isset($this->_args['domain'])) {
-            die($this->usageHelp());
+            exit ($this->usageHelp());
         }
     }
 
