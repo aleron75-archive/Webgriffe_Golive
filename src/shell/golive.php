@@ -3,20 +3,15 @@ require_once 'abstract.php';
 
 class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
 {
+    /**
+     * @var bool Indicates whether to use colors or not.
+     */
+    private $_useColors = true;
+
     public function run()
     {
-        $domain = $this->getArg('domain');
-
-        $nocolors = $this->getArg('nocolors');
-
-        if (empty($domain))
-        {
-            print $this->usageHelp();
-            exit(1);
-        }
-
         $parameters =     array(
-            'domain'    => $domain,
+            'domain'    => $this->getArg('domain'),
         );
 
         $golive = new Webgriffe_Golive_Model_Core();
@@ -24,7 +19,9 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
         printf("Webgriffe Go Live %s".PHP_EOL, Mage::helper('webgriffe_golive')->getVersion());
         printf("Active Checkers found: %d".PHP_EOL, $golive->getCheckersCount());
         printf("Checking current Magento installation... ");
+
         $result = $golive->check($parameters);
+
         printf("done!".PHP_EOL.PHP_EOL);
 
         $severityCount = array(
@@ -40,7 +37,6 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
             $maxlen = max ($maxlen, strlen($checker->getName()));
         }
 
-        #Zend_Debug::dump($result, 'Detailed result');
         $mask = "| %3.3s | %-".$maxlen.".".$maxlen."s | %-7.7s |\n";
         printf($mask, str_repeat('-', $maxlen), str_repeat('-', 7));
         printf($mask, 'ID', 'Checked', 'Result');
@@ -48,7 +44,7 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
         $id = 1;
         foreach ($result as $code => $res) {
             $checker = $golive->getChecker($code);
-            if (!$nocolors) {
+            if ($this->_useColors) {
                 switch ($res) {
                     case Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_ERROR:
                         $mask = "| %3.3s | \033[31m%-".$maxlen.".".$maxlen."s\033[0m | \033[31m%-7.7s\033[0m |\n";
@@ -79,6 +75,36 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
     }
 
     /**
+     * Additional initialize instruction
+     *
+     * @return Mage_Shell_Abstract
+     */
+    protected function _construct()
+    {
+        parent::_construct();
+
+        if (isset($this->_args['nocolors']))
+        {
+            $this->_useColors = false;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Validate arguments
+     *
+     */
+    protected function _validate()
+    {
+        parent::_validate();
+
+        if (!isset($this->_args['domain'])) {
+            die($this->usageHelp());
+        }
+    }
+
+    /**
      * Retrieve Usage Help Message
      *
      */
@@ -87,12 +113,12 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
         $version = Mage::helper('webgriffe_golive')->getVersion();
         return <<<USAGE
 Webgriffe Go Live v $version
-Usage:  php -f golive.php -- [options]
+Usage:  php -f golive.php --[option] --[option <option_value>]
         php -f golive.php --domain www.yourdomain.com
 
   --domain <domain> The domain against which this site configuration will be tested
   --nocolors        Don't use colors (useful when directing output to file)
-  help              This help
+  -h, --help        This help
 
 USAGE;
     }
