@@ -27,11 +27,38 @@ abstract class Webgriffe_Golive_Model_Checker_Abstract extends Varien_Object
     public function initialize($code, $data)
     {
         $this->setCode($code);
-        $this->addData(array_map("trim", $data));
+        $this->addData(
+            array_map(
+                array('Webgriffe_Golive_Model_Checker_Abstract', 'parseData'),
+                $data
+            )
+        );
         return $this;
     }
 
     public abstract function check($parameters = array());
+
+    /**
+     * Used as callback for array_map in the initialize() method to
+     * differentiate between string and array.
+     *
+     * @param mixed $element
+     * @return string
+     */
+    public static function parseData($element)
+    {
+        if (is_string($element))
+        {
+            return trim($element);
+        }
+
+        if (is_array($element))
+        {
+            return $element;
+        }
+
+        return '';
+    }
 
     /**
      * @param $parameters

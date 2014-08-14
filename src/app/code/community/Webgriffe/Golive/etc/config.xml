@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Webgriffe_Golive>
-            <version>0.1.0</version>
+            <version>0.2.0</version>
         </Webgriffe_Golive>
     </modules>
     <global>
@@ -633,10 +633,15 @@
                 </google_analytics_activated>
                 <google_analytics_accountnumber>
                     <disabled>0</disabled>
+                    <depends>
+                        <google_analytics_activated>passed</google_analytics_activated>
+                    </depends>
                     <name><![CDATA[Google Analytics Account Number]]></name>
                     <description><![CDATA[If GA is enabled, an Account Number should be configured]]></description>
                     <default_severity>error</default_severity>
-                    <class>webgriffe_golive/checker_config_gaAccountNumber</class>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path>google/analytics/account</xml_config_path>
+                    <default_config_value><![CDATA[]]></default_config_value>
                 </google_analytics_accountnumber>
                 <sitemap>
                     <disabled>0</disabled>

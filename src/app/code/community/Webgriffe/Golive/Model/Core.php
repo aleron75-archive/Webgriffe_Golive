@@ -49,6 +49,20 @@ class Webgriffe_Golive_Model_Core
             {
                 $result[$checker->getCode()] = $checker->check($parameters);
             }
+
+            // Change exit value for checkers that have to be skipped
+            foreach ($this->_checkers as $checker)
+            {
+                $dependencies = $checker->getDepends();
+                foreach ($dependencies as $depCode => $depResult)
+                {
+                    if ($result[$depCode] != $depResult)
+                    {
+                        $result[$checker->getCode()] = Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_SKIP;
+                        continue;
+                    }
+                }
+            }
         }
         return $result;
     }
