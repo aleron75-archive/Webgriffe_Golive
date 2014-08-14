@@ -8,17 +8,36 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
      */
     private $_useColors = true;
 
+    /**
+     * @var array Contains the list of Checkers ID to explain
+     */
+    private $_explainIds = array();
+
     public function run()
     {
-        $parameters =     array(
-            'domain'    => $this->getArg('domain'),
-        );
-
         $golive = new Webgriffe_Golive_Model_Core();
 
         printf("Webgriffe Go Live %s".PHP_EOL, Mage::helper('webgriffe_golive')->getVersion());
+
+        if (count($this->_explainIds))
+        {
+            foreach ($this->_explainIds as $id)
+            {
+                if ($checker = $golive->getCheckerById($id))
+                {
+                    printf("\n%s: %s\n%s\n---\n", $id, $checker->getName(), $checker->getDescription());
+                }
+            }
+
+            exit(0);
+        }
+
         printf("Active Checkers found: %d".PHP_EOL, $golive->getCheckersCount());
         printf("Checking current Magento installation... ");
+
+        $parameters =     array(
+            'domain'    => $this->getArg('domain'),
+        );
 
         $result = $golive->check($parameters);
 
@@ -97,8 +116,14 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
     {
         parent::_validate();
 
-        if (!isset($this->_args['domain'])) {
+        if (!isset($this->_args['domain']) && !isset($this->_args['explain']))
+        {
             exit ($this->usageHelp());
+        }
+
+        if (isset($this->_args['explain']))
+        {
+            $this->_explainIds = array_map("trim", explode(',', $this->_args['explain']));
         }
     }
 
@@ -115,6 +140,7 @@ Usage:  php -f golive.php --[option] --[option <option_value>]
         php -f golive.php --domain www.yourdomain.com
 
   --domain <domain> The domain against which this site configuration will be tested
+  --explain <ids>   The list of comma separated IDs whose description has to be printed
   --nocolors        Don't use colors (useful when directing output to file)
   -h, --help        This help
 

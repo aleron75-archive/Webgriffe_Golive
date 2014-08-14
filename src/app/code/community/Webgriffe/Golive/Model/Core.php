@@ -75,6 +75,15 @@ class Webgriffe_Golive_Model_Core
         return null;
     }
 
+    public function getCheckerById($id)
+    {
+        $ids = array_keys($this->_checkers);
+        if (isset($ids[$id - 1])) {
+            return $this->_checkers[$ids[$id -1]];
+        }
+        return null;
+    }
+
     protected function _getCheckerInstance($nodeName, $nodeContent)
     {
         if (!isset($nodeContent['name'])) {
