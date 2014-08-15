@@ -29,13 +29,25 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
             {
                 if ($checker = $golive->getCheckerById($id))
                 {
+                    $name = $checker->getName();
                     $description = $checker->getDescription();
                     if (empty($description)) {
                         $description = '>>> Missing description for this checker';
                     }
-                    $out->printLine(sprintf("%s: %s\n%s\n---", $id, $checker->getName(), $description));
+                    $styles = array('-66');
+                    $out->printTl($styles);
+                    $styles = array('3', '-60');
+                    $out->printTr(array($id, $name), $styles, $this->_useColors ? $out::COLOR_CYAN : '');
+                    $styles = array('-66');
+                    $out->printTl($styles);
+                    $out->printTr(array($description), $styles);
+                    #$out->printTl($styles);
+                    #$out->printLine();
+                    #$out->printLine(sprintf("%s: %s\n%s\n---", $id, $checker->getName(), $description));
                 }
             }
+            $out->printTl($styles);
+            $out->printLine();
 
             exit(0);
         }

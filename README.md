@@ -103,7 +103,7 @@ $ php shell/golive.php --domain www.yourdomain.com
 The output is something like:
 
 ```
-Webgriffe Go Live 0.3.0
+Webgriffe Go Live 0.3.1
 Active Checkers found: 73
 Checking current Magento installation... done!
 
@@ -196,22 +196,25 @@ Through the following command you can get checkers' description:
 $ php shell/golive.php --explain 34,35,36
 ```
 
-At the moment the output is something raw like:
+The output is something like:
 
 ```
-Webgriffe Go Live 0.3.0
-
-34: Store Email Custom Email 2 Sender Address
-System > Configuration > GENERAL > Store Email Addresses > Custom Email 2 > Sender Email
----
-
-35: Shipping Tax Class
-System > Configuration > SALES > Tax > Tax Classes > Tax Class for Shipping
----
-
-36: Default Destination Country for Tax Calculation
-System > Configuration > SALES > Tax > Default Tax Destination Calculation > Default Country
----
+| ------------------------------------------------------------------ |
+|  34 | Store Email Custom Email 2 Sender Address                    |
+| ------------------------------------------------------------------ |
+| System > Configuration > GENERAL > Store Email Addresses > Custom  |
+| Email 2 > Sender Email                                             |
+| ------------------------------------------------------------------ |
+|  35 | Shipping Tax Class                                           |
+| ------------------------------------------------------------------ |
+| System > Configuration > SALES > Tax > Tax Classes > Tax Class for |
+| Shipping                                                           |
+| ------------------------------------------------------------------ |
+|  36 | Default Destination Country for Tax Calculation              |
+| ------------------------------------------------------------------ |
+| System > Configuration > SALES > Tax > Default Tax Destination     |
+| Calculation > Default Country                                      |
+| ------------------------------------------------------------------ |
 ```
 
 The description you see is taken from the config.xml file; almost
