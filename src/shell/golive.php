@@ -64,7 +64,7 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
             $maxlen = max($maxlen, strlen($checker->getName()));
         }
 
-        $mask = "| %3.3s | %-".$maxlen.".".$maxlen."s | %-7.7s |";
+        $mask = "| %3s | %-".$maxlen."s | %-7s |";
         $out->printLine(sprintf($mask, str_repeat('-', 3), str_repeat('-', $maxlen), str_repeat('-', 7)));
         $out->printLine(sprintf($mask, 'ID', 'Checked', 'Result'));
         $out->printLine(sprintf($mask, str_repeat('-', 3), str_repeat('-', $maxlen), str_repeat('-', 7)));
@@ -74,22 +74,22 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
             if ($this->_useColors) {
                 switch ($res) {
                     case Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_ERROR:
-                        $mask = "| %3.3s | \033[31m%-".$maxlen.".".$maxlen."s\033[0m | \033[31m%-7.7s\033[0m |\n";
+                        $mask = "| %3s | \033[31m%-".$maxlen."s\033[0m | \033[31m%-7s\033[0m |\n";
                         break;
                     case Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_WARNING:
-                        $mask = "| %3.3s | \033[33m%-".$maxlen.".".$maxlen."s\033[0m | \033[33m%-7.7s\033[0m |\n";
+                        $mask = "| %3s | \033[33m%-".$maxlen."s\033[0m | \033[33m%-7s\033[0m |\n";
                         break;
                     case Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_SKIP:
-                        $mask = "| %3.3s | \033[36m%-".$maxlen.".".$maxlen."s\033[0m | \033[36m%-7.7s\033[0m |\n";
+                        $mask = "| %3s | \033[36m%-".$maxlen."s\033[0m | \033[36m%-7s\033[0m |\n";
                         break;
                     default:
-                        $mask = "| %3.3s | %-".$maxlen.".".$maxlen."s | %-7.7s |\n";
+                        $mask = "| %3s | %-".$maxlen."s | %-7s |\n";
                 }
             }
             $out->printLine(sprintf($mask, $id++, $checker->getName(), $res), 0);
         }
-        $mask = "| %".($maxlen+6).".".($maxlen+6)."s | %-7.7s |";
-        $out->printLine(sprintf($mask, str_repeat('-', $maxlen+6), str_repeat('-', $maxlen), str_repeat('-', 7)));
+        $mask = "| %".($maxlen+6)."s | %-7s |";
+        $out->printLine(sprintf($mask, str_repeat('-', $maxlen+6), str_repeat('-', 7)));
         $out->printLine(sprintf($mask, "Errors", $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_ERROR]));
         $out->printLine(sprintf($mask, "Warnings", $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_WARNING]));
         $out->printLine(sprintf($mask, "Passed", $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_NONE]));
