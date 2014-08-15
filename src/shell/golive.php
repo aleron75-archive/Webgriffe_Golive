@@ -15,25 +15,33 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
 
     public function run()
     {
+        $out = Mage::helper('webgriffe_golive/output');
+
         $golive = new Webgriffe_Golive_Model_Core();
 
-        printf("Webgriffe Go Live %s".PHP_EOL, Mage::helper('webgriffe_golive')->getVersion());
+        $out->printLine(sprintf("Webgriffe Go Live %s", Mage::helper('webgriffe_golive')->getVersion()));
 
         if (count($this->_explainIds))
         {
+            $out->printLine();
+
             foreach ($this->_explainIds as $id)
             {
                 if ($checker = $golive->getCheckerById($id))
                 {
-                    printf("\n%s: %s\n%s\n---\n", $id, $checker->getName(), $checker->getDescription());
+                    $description = $checker->getDescription();
+                    if (empty($description)) {
+                        $description = '>>> Missing description for this checker';
+                    }
+                    $out->printLine(sprintf("%s: %s\n%s\n---", $id, $checker->getName(), $description));
                 }
             }
 
             exit(0);
         }
 
-        printf("Active Checkers found: %d".PHP_EOL, $golive->getCheckersCount());
-        printf("Checking current Magento installation... ");
+        $out->printLine(sprintf("Active Checkers found: %d", $golive->getCheckersCount()));
+        $out->printLine("Checking current Magento installation... ", 0);
 
         $parameters =     array(
             'domain'    => $this->getArg('domain'),
@@ -41,7 +49,7 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
 
         $result = $golive->check($parameters);
 
-        printf("done!".PHP_EOL.PHP_EOL);
+        $out->printLine("done!", 2);
 
         $severityCount = array(
             Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_SKIP => 0,
@@ -56,10 +64,10 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
             $maxlen = max($maxlen, strlen($checker->getName()));
         }
 
-        $mask = "| %3.3s | %-".$maxlen.".".$maxlen."s | %-7.7s |\n";
-        printf($mask, str_repeat('-', $maxlen), str_repeat('-', 7));
-        printf($mask, 'ID', 'Checked', 'Result');
-        printf($mask, str_repeat('-', 3), str_repeat('-', $maxlen), str_repeat('-', 7));
+        $mask = "| %3.3s | %-".$maxlen.".".$maxlen."s | %-7.7s |";
+        $out->printLine(sprintf($mask, str_repeat('-', 3), str_repeat('-', $maxlen), str_repeat('-', 7)));
+        $out->printLine(sprintf($mask, 'ID', 'Checked', 'Result'));
+        $out->printLine(sprintf($mask, str_repeat('-', 3), str_repeat('-', $maxlen), str_repeat('-', 7)));
         $id = 1;
         foreach ($result as $code => $res) {
             $checker = $golive->getChecker($code);
@@ -78,16 +86,16 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
                         $mask = "| %3.3s | %-".$maxlen.".".$maxlen."s | %-7.7s |\n";
                 }
             }
-            printf($mask, $id++, $checker->getName(), $res);
+            $out->printLine(sprintf($mask, $id++, $checker->getName(), $res), 0);
         }
-        $mask = "| %".($maxlen+6).".".($maxlen+6)."s | %-7.7s |\n";
-        printf($mask, str_repeat('-', $maxlen+6), str_repeat('-', $maxlen), str_repeat('-', 7));
-        printf($mask, "Errors", $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_ERROR]);
-        printf($mask, "Warnings", $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_WARNING]);
-        printf($mask, "Passed", $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_NONE]);
-        printf($mask, "Skipped", $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_SKIP]);
-        printf($mask, str_repeat('-', $maxlen+6), str_repeat('-', 7));
-        printf(PHP_EOL);
+        $mask = "| %".($maxlen+6).".".($maxlen+6)."s | %-7.7s |";
+        $out->printLine(sprintf($mask, str_repeat('-', $maxlen+6), str_repeat('-', $maxlen), str_repeat('-', 7)));
+        $out->printLine(sprintf($mask, "Errors", $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_ERROR]));
+        $out->printLine(sprintf($mask, "Warnings", $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_WARNING]));
+        $out->printLine(sprintf($mask, "Passed", $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_NONE]));
+        $out->printLine(sprintf($mask, "Skipped", $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_SKIP]));
+        $out->printLine(sprintf($mask, str_repeat('-', $maxlen+6), str_repeat('-', 7)));
+        $out->printLine();
         exit($severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_ERROR]);
     }
 
