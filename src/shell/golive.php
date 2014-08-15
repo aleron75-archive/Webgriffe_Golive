@@ -132,6 +132,7 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
         if (isset($this->_args['explain']))
         {
             $this->_explainIds = array_map("trim", explode(',', $this->_args['explain']));
+            asort($this->_explainIds);
         }
     }
 
