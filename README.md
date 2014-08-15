@@ -199,6 +199,8 @@ $ php shell/golive.php --explain 34,35,36
 The output is something like:
 
 ```
+Webgriffe Go Live 0.3.1
+
 | ------------------------------------------------------------------ |
 |  34 | Store Email Custom Email 2 Sender Address                    |
 | ------------------------------------------------------------------ |
