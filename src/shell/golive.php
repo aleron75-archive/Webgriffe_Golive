@@ -37,7 +37,7 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
                     $styles = array('-68');
                     $out->printTl($styles);
                     $styles = array('3', '-62');
-                    $out->printTr(array($id, $name), $styles, $this->_useColors ? $out::COLOR_CYAN : '');
+                    $out->printTr(array($id, $name), $styles, $this->_useColors ? $out::STYLE_BOLD : '');
                     $styles = array('-68');
                     $out->printTl($styles);
                     $out->printTr(array($description), $styles);
@@ -76,7 +76,8 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
 
         $styles = array('3', '-52', '-7');
         $out->printTl($styles);
-        $out->printTr(array('ID', 'Checked', 'Result'), $styles);
+        $out->printTr(array('ID', 'Checked', 'Result'), $styles, $out::STYLE_BOLD);
+        $out->printTl($styles);
 
         $id = 1;
         foreach ($result as $code => $res) {

@@ -1,9 +1,16 @@
 <?php
 class Webgriffe_Golive_Helper_Output extends Mage_Core_Helper_Abstract
 {
+    const STYLE_BOLD    = 1;
+
+    const COLOR_BLACK   = 30;
     const COLOR_RED     = 31;
+    const COLOR_GREEN   = 32;
     const COLOR_YELLOW  = 33;
+    const COLOR_BLUE    = 34;
+    const COLOR_MAGENTA = 35;
     const COLOR_CYAN    = 36;
+    const COLOR_WHITE   = 37;
     const COLOR_DEFAULT = 39;
 
     public function getLines($str, $width = 72, $cut = false)
@@ -24,15 +31,15 @@ class Webgriffe_Golive_Helper_Output extends Mage_Core_Helper_Abstract
      *
      * @param array $columns
      */
-    public function printTr($columnStrings, $columnStyles, $columnColors = null)
+    public function printTr($columnStrings, $columnStyles, $textStyles = null)
     {
         $numColumns = count($columnStrings);
         if ($numColumns != count($columnStyles)) {
             Mage::throwException("Number of columns must match");
         }
 
-        if (is_string($columnColors) || is_int($columnColors)) {
-            $columnColors = array_fill(0, $numColumns, $columnColors);
+        if (is_string($textStyles) || is_int($textStyles)) {
+            $textStyles = array_fill(0, $numColumns, $textStyles);
         }
 
         $mask = '';
@@ -41,8 +48,8 @@ class Webgriffe_Golive_Helper_Output extends Mage_Core_Helper_Abstract
 
         for ($i = 0; $i < $numColumns; $i ++)
         {
-            if (!is_null($columnColors) && isset($columnColors[$i])) {
-                $mask .= "| \033[" . $columnColors[$i] . "m%" . $columnStyles[$i] . "s\033[0m ";
+            if (!is_null($textStyles) && isset($textStyles[$i])) {
+                $mask .= "| \033[" . $textStyles[$i] . "m%" . $columnStyles[$i] . "s\033[0m ";
             } else {
                 $mask .= '| %' . $columnStyles[$i] . 's ';
             }
