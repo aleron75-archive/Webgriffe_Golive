@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Webgriffe_Golive>
-            <version>0.3.3</version>
+            <version>0.3.4</version>
         </Webgriffe_Golive>
     </modules>
     <global>
