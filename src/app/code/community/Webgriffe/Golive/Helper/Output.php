@@ -4,6 +4,7 @@ class Webgriffe_Golive_Helper_Output extends Mage_Core_Helper_Abstract
     const COLOR_RED     = 31;
     const COLOR_YELLOW  = 33;
     const COLOR_CYAN    = 36;
+    const COLOR_DEFAULT = 39;
 
     public function getLines($str, $width = 72, $cut = false)
     {

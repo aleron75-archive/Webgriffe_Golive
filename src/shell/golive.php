@@ -34,16 +34,13 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
                     if (empty($description)) {
                         $description = '>>> Missing description for this checker';
                     }
-                    $styles = array('-66');
+                    $styles = array('-68');
                     $out->printTl($styles);
-                    $styles = array('3', '-60');
+                    $styles = array('3', '-62');
                     $out->printTr(array($id, $name), $styles, $this->_useColors ? $out::COLOR_CYAN : '');
-                    $styles = array('-66');
+                    $styles = array('-68');
                     $out->printTl($styles);
                     $out->printTr(array($description), $styles);
-                    #$out->printTl($styles);
-                    #$out->printLine();
-                    #$out->printLine(sprintf("%s: %s\n%s\n---", $id, $checker->getName(), $description));
                 }
             }
             $out->printTl($styles);
@@ -76,37 +73,40 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
             $maxlen = max($maxlen, strlen($checker->getName()));
         }
 
-        $mask = "| %3s | %-".$maxlen."s | %-7s |";
-        $out->printLine(sprintf($mask, str_repeat('-', 3), str_repeat('-', $maxlen), str_repeat('-', 7)));
-        $out->printLine(sprintf($mask, 'ID', 'Checked', 'Result'));
-        $out->printLine(sprintf($mask, str_repeat('-', 3), str_repeat('-', $maxlen), str_repeat('-', 7)));
+
+        $styles = array('3', '-52', '-7');
+        $out->printTl($styles);
+        $out->printTr(array('ID', 'Checked', 'Result'), $styles);
+
         $id = 1;
         foreach ($result as $code => $res) {
             $checker = $golive->getChecker($code);
             if ($this->_useColors) {
                 switch ($res) {
                     case Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_ERROR:
-                        $mask = "| %3s | \033[31m%-".$maxlen."s\033[0m | \033[31m%-7s\033[0m |\n";
+                        $color = $out::COLOR_RED;
                         break;
                     case Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_WARNING:
-                        $mask = "| %3s | \033[33m%-".$maxlen."s\033[0m | \033[33m%-7s\033[0m |\n";
+                        $color = $out::COLOR_YELLOW;
                         break;
                     case Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_SKIP:
-                        $mask = "| %3s | \033[36m%-".$maxlen."s\033[0m | \033[36m%-7s\033[0m |\n";
+                        $color = $out::COLOR_CYAN;
                         break;
                     default:
-                        $mask = "| %3s | %-".$maxlen."s | %-7s |\n";
+                        $color = $out::COLOR_DEFAULT;
                 }
             }
-            $out->printLine(sprintf($mask, $id++, $checker->getName(), $res), 0);
+            $columns = array($id ++, $checker->getName(), $res);
+            $out->printTr($columns, $styles, $color);
         }
-        $mask = "| %".($maxlen+6)."s | %-7s |";
-        $out->printLine(sprintf($mask, str_repeat('-', $maxlen+6), str_repeat('-', 7)));
-        $out->printLine(sprintf($mask, "Errors", $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_ERROR]));
-        $out->printLine(sprintf($mask, "Warnings", $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_WARNING]));
-        $out->printLine(sprintf($mask, "Passed", $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_NONE]));
-        $out->printLine(sprintf($mask, "Skipped", $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_SKIP]));
-        $out->printLine(sprintf($mask, str_repeat('-', $maxlen+6), str_repeat('-', 7)));
+
+        $styles = array('58', '-7');
+        $out->printTl($styles);
+        $out->printTr(array('Errors', $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_ERROR]), $styles);
+        $out->printTr(array('Warnings', $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_WARNING]), $styles);
+        $out->printTr(array('Passed', $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_NONE]), $styles);
+        $out->printTr(array('Skipped', $severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_SKIP]), $styles);
+        $out->printTl($styles);
         $out->printLine();
         exit($severityCount[Webgriffe_Golive_Model_Checker_Abstract::SEVERITY_ERROR]);
     }
