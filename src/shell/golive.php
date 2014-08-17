@@ -66,12 +66,24 @@ class Mage_Shell_Webgriffe_Golive extends Mage_Shell_Abstract
     {
         parent::_validate();
 
-        if (!isset($this->_args['domain']) && !isset($this->_args['explain']))
+        $domainPassed = true;
+        if (!$this->getArg('domain') || $this->getArg('domain') === true)
+        {
+            $domainPassed = false;
+        }
+
+        $explainPassed = true;
+        if (!$this->getArg('explain') || $this->getArg('explain') === true)
+        {
+            $explainPassed = false;
+        }
+
+        if (!$domainPassed && !$explainPassed)
         {
             exit ($this->usageHelp());
         }
 
-        if (isset($this->_args['explain']))
+        if (!$domainPassed && $explainPassed)
         {
             $this->_explainIds = array_map("trim", explode(',', $this->_args['explain']));
             asort($this->_explainIds);
