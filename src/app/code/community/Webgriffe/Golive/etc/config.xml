@@ -369,8 +369,20 @@
                     <xml_config_path><![CDATA[trans_email/ident_custom2/email]]></xml_config_path>
                     <default_config_value><![CDATA[custom2@example.com]]></default_config_value>
                 </store_email_custom2_sender>
+                <contacts_contacts_enabled>
+                    <disabled>0</disabled>
+                    <name><![CDATA[Contacts Form]]></name>
+                    <description><![CDATA[System > Configuration > GENERAL > Contacts > Contact Us > Enable Contact Us]]></description>
+                    <default_severity>warning</default_severity>
+                    <class>webgriffe_golive/checker_config_defaultValue</class>
+                    <xml_config_path><![CDATA[contacts/contacts/enabled]]></xml_config_path>
+                    <default_config_value><![CDATA[0]]></default_config_value>
+                </contacts_contacts_enabled>
                 <contacts_email_recipient>
                     <disabled>0</disabled>
+                    <depends>
+                        <contacts_contacts_enabled>passed</contacts_contacts_enabled>
+                    </depends>
                     <name><![CDATA[Contacts Email Send To]]></name>
                     <description><![CDATA[System > Configuration > GENERAL > Contacts > Email Options > Send Emails to]]></description>
                     <default_severity>error</default_severity>
