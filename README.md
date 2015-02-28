@@ -8,6 +8,8 @@ Golive extension can be helpful either before a site launch or in continuous
 integration environment to ensure that changes to Magento settings don't
 compromise the site.
 
+*Note:* I'm currently writing a new version of Golive in order to be uesd as a [n98-magerun](https://github.com/netz98/n98-magerun) plugin. The repository is still private but it will become public as soon as I am finished.
+
 Installation
 ------------
 
