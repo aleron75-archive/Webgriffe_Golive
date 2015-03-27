@@ -1,0 +1,26 @@
+autoloaders:
+  Webgriffe\GoLive: %module%/src
+
+commands:
+  N98\Magento\Command\System\CheckCommand:
+    checks:
+      golive:
+         - Webgriffe\GoLive\Cache
+         - Webgriffe\GoLive\Cookie
+         - Webgriffe\GoLive\Dev
+         - Webgriffe\GoLive\Favicon
+         - Webgriffe\GoLive\Footer
+         - Webgriffe\GoLive\GoogleAnalytics
+         - Webgriffe\GoLive\HtmlHead
+         - Webgriffe\GoLive\HtmlHeader
+         - Webgriffe\GoLive\ImagePlaceholder
+         - Webgriffe\GoLive\Index
+         - Webgriffe\GoLive\Log
+         - Webgriffe\GoLive\Mail
+         - Webgriffe\GoLive\SalesTax
+         - Webgriffe\GoLive\ShippingOrigin
+         - Webgriffe\GoLive\Sitemap
+         - Webgriffe\GoLive\StoreEmail
+         - Webgriffe\GoLive\StoreInformation
+         - Webgriffe\GoLive\TestData
+         - Webgriffe\GoLive\Theme
