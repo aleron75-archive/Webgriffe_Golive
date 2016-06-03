@@ -48,7 +48,7 @@ class Favicon implements StoreCheck
         $title = "Theme Favicon";
         $result = $results->createResult();
         $theme = $this->_getTheme($store);
-        $realpath = 'frontend'.DS.$theme.DS.'favicon.gif';
+        $realpath = 'frontend'.DS.$theme.DS.'favicon.ico';
         $faviconfile = \Mage::getBaseDir('skin').DS.$realpath;
         if (!file_exists($faviconfile)) {
             $result->setStatus(Result::STATUS_WARNING);
