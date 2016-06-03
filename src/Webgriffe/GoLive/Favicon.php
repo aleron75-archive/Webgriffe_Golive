@@ -23,7 +23,7 @@ class Favicon implements StoreCheck
     {
         $title = "Root Favicon";
         $result = $results->createResult();
-        $realpath = 'favicon.gif';
+        $realpath = 'favicon.ico';
         $faviconfile = \Mage::getBaseDir('base').DS.$realpath;
         if (!file_exists($faviconfile)) {
             $result->setStatus(Result::STATUS_WARNING);
