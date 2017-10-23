@@ -7,6 +7,8 @@ Introduction
 Webgriffe_Golive is an n98-magerun module which can be helpful either before a site launch or in continuous
 integration environment to ensure that changes to Magento settings don't compromise the site.
 
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 Installation
 ------------
 Refer to [Introducting the new n98-magerun module system](http://magerun.net/introducting-the-new-n98-magerun-module-system/)
